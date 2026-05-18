@@ -45,3 +45,6 @@ Backup[ ]of[ ]*.key/
 Backup[ ]of[ ]*.numbers/
 
 Pods/
+
+# Bundler-managed gems
+vendor/bundle/
