@@ -40,7 +40,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         overlayWindowController = OverlayWindowController()
         
         LaunchAtLogin.isEnabled = UserDefaults.standard.bool(forKey: Utils.shouldLaunchOnStartupKey)
-        KeyboardShortcuts.shared.registerDefaults()
+        KeyboardShortcuts.shared.setUp()
         UserDefaults.standard.register(defaults: [
             Utils.shouldLaunchOnStartupKey: false,
         ])

@@ -77,12 +77,12 @@ class BindingsPreferenceViewController: NSViewController, PreferencePane, NSText
         
         let hintModeShortcutLabel = NSTextField(labelWithString: "Hint Mode Shortcut:")
         hintModeShortcut = MASShortcutView()
-        hintModeShortcut.associatedUserDefaultsKey = KeyboardShortcuts.shared.hintModeShortcutKey
+        hintModeShortcut.setAssociatedUserDefaultsKey(KeyboardShortcuts.shared.hintModeShortcutKey, withTransformerName: MASDictionaryTransformerName)
         grid.addRow(with: [hintModeShortcutLabel, hintModeShortcut])
-        
+
         let scrollModeShortcutLabel = NSTextField(labelWithString: "Scroll Mode Shortcut:")
         scrollModeShortcut = MASShortcutView()
-        scrollModeShortcut.associatedUserDefaultsKey = KeyboardShortcuts.shared.scrollModeShortcutKey
+        scrollModeShortcut.setAssociatedUserDefaultsKey(KeyboardShortcuts.shared.scrollModeShortcutKey, withTransformerName: MASDictionaryTransformerName)
         grid.addRow(with: [scrollModeShortcutLabel, scrollModeShortcut])
         
         grid.addRow(with: [])
