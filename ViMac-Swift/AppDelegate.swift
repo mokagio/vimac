@@ -13,7 +13,6 @@ import MASShortcut
 import Sparkle
 import LaunchAtLogin
 import Preferences
-import Segment
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -50,19 +49,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         super.init()
     }
 
-    func applicationDidFinishLaunching(_ aNotification: Notification) {        
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
         if isDuplicateAppInstance() {
             NSApp.terminate(self)
             return
         }
-        
-        let configuration = AnalyticsConfiguration(writeKey: "cjSicRrQ0dUgFkhmjDDur7974VfQKTlX")
-        configuration.trackApplicationLifecycleEvents = true // Enable this to record certain application events automatically!
-        configuration.recordScreenViews = true // Enable this to record screen views automatically!
-        Analytics.setup(with: configuration)
-        
-        reportConfiguration()
-        
+
         setupPreferences()
         setupStatusItem()
 
@@ -250,7 +242,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     }
                 }
                 
-                self.modeCoordinator.setHintMode(mechanism: "Shortcut")
+                self.modeCoordinator.setHintMode()
             })
         )
         
@@ -266,7 +258,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     }
                 }
                 
-                self.modeCoordinator.setScrollMode(mechanism: "Shortcut")
+                self.modeCoordinator.setScrollMode()
             })
         )
     }
@@ -289,22 +281,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillTerminate(_ aNotification: Notification) {
         self.compositeDisposable.dispose()
-        
+
         AXEnhancedUserInterfaceActivator.deactivateAll()
         AXManualAccessibilityActivator.deactivateAll()
-    }
-    
-    func reportConfiguration() {
-        Analytics.shared().identify(nil, traits: [
-            "Launch At Login": UserDefaults.standard.bool(forKey: Utils.shouldLaunchOnStartupKey),
-            "Force KB Layout ID": UserDefaults.standard.string(forKey: Utils.forceKeyboardLayoutKey),
-            "Hint Mode Key Sequence Enabled": UserDefaultsProperties.keySequenceHintModeEnabled.read(),
-            "Scroll Mode Key Sequence Enabled": UserDefaultsProperties.keySequenceScrollModeEnabled.read(),
-            "Hint Mode Key Sequence": UserDefaultsProperties.keySequenceHintMode.read(),
-            "Scroll Mode Key Sequence": UserDefaultsProperties.keySequenceScrollMode.read(),
-            "Non Native Support Enabled": UserDefaultsProperties.AXEnhancedUserInterfaceEnabled.read(),
-            "Electron Support Enabled": UserDefaultsProperties.AXManualAccessibilityEnabled.read()
-        ])
     }
 }
 
@@ -316,8 +295,6 @@ extension AppDelegate : NSWindowDelegate {
     }
     
     func windowWillClose(_ notification: Notification) {
-        reportConfiguration()
-        
         let transformState = ProcessApplicationTransformState(kProcessTransformToUIElementApplication)
         var psn = ProcessSerialNumber(highLongOfPSN: 0, lowLongOfPSN: UInt32(kCurrentProcess))
         TransformProcessType(&psn, transformState)
