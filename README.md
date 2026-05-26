@@ -74,6 +74,40 @@ modified:   grant-accessibility-permission-dev.scpt
 
 Avoid committing them.
 
+## Verifying changes from the command line
+
+A `Makefile` wraps the most common verification steps so they don't require
+Xcode UI.
+First time only, install dependencies:
+
+```
+make bootstrap
+```
+
+Then any of:
+
+```
+make build       # unsigned Debug build under build/
+make test        # VimacTests unit-test bundle (UI tests skipped — they need Accessibility)
+make run         # launch the Debug build (open -n)
+make screenshot  # launch, open Preferences, capture PNG to tmp/screenshots/
+```
+
+Fastlane lanes (`bundle exec fastlane build`, `test`, `screenshot`) wrap the
+same scripts for environments that prefer that entry point.
+
+Dev builds get the bundle id `dexterleng.vimac.dev` so they don't trigger
+`AppDelegate.isDuplicateAppInstance()` when an installed copy of Vimac is
+also running.
+`make test` uses an isolated `UserDefaults` suite per test, so it will not
+disturb the shortcuts of an installed copy.
+
+`make screenshot` needs Screen Recording permission for the terminal running
+it; macOS will prompt the first time.
+If permission is denied or the Preferences window isn't reachable (e.g.
+because the welcome window is up waiting for Accessibility permission), the
+script falls back to a full-display capture.
+
 ## Contributing
 
 Feel free to contribute to Vimac. Make sure to open an issue / ask to work on something first!

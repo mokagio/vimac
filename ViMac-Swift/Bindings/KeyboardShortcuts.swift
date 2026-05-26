@@ -17,6 +17,12 @@ class KeyboardShortcuts {
     let defaultHintShortcut = MASShortcut.init(keyCode: kVK_ANSI_F, modifierFlags: [.control])
     let defaultScrollShortcut = MASShortcut.init(keyCode: kVK_ANSI_J, modifierFlags: [.control])
 
+    private let defaults: UserDefaults
+
+    init(defaults: UserDefaults = .standard) {
+        self.defaults = defaults
+    }
+
     /// Configures shortcut storage and registers defaults.
     ///
     /// Storage uses `MASDictionaryTransformer`, which represents a cleared
@@ -60,18 +66,18 @@ class KeyboardShortcuts {
     /// dictionary form expected by `MASDictionaryTransformer`. Without this,
     /// users who upgrade would silently lose their custom shortcuts on first
     /// launch after the storage-format switch.
-    private func migrateLegacyShortcutStorage() {
+    func migrateLegacyShortcutStorage() {
         for key in [hintModeShortcutKey, scrollModeShortcutKey] {
-            let value = UserDefaults.standard.object(forKey: key)
+            let value = defaults.object(forKey: key)
             if value == nil || value is [String: Any] { continue }
             guard
                 let data = value as? Data,
                 let shortcut = try? NSKeyedUnarchiver.unarchivedObject(ofClass: MASShortcut.self, from: data)
             else {
-                UserDefaults.standard.removeObject(forKey: key)
+                defaults.removeObject(forKey: key)
                 continue
             }
-            UserDefaults.standard.set(
+            defaults.set(
                 ["keyCode": shortcut.keyCode, "modifierFlags": shortcut.modifierFlags.rawValue],
                 forKey: key
             )

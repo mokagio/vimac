@@ -26,3 +26,14 @@ target 'Vimac' do
   end
 
 end
+
+# Match the workspace's minimum macOS to every pod target. Without this, pods
+# carry their upstream default (some as low as 10.7), which newer Xcode rejects
+# when they use Foundation types like `Date`.
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['MACOSX_DEPLOYMENT_TARGET'] = '10.14'
+    end
+  end
+end
