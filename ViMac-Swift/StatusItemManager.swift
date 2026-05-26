@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import Sparkle
 import Preferences
 
 class StatusItemManager: NSObject {
@@ -39,7 +38,6 @@ extension StatusItemManager : NSMenuDelegate {
             
             menu.addItem(withTitle: "About", action: #selector(aboutClick), keyEquivalent: "").target = self
             menu.addItem(withTitle: "Preferences", action: #selector(preferencesClick), keyEquivalent: "").target = self
-            menu.addItem(withTitle: "Check for updates", action: #selector(checkForUpdatesClick), keyEquivalent: "").target = self
             menu.addItem(NSMenuItem.separator())
             menu.addItem(withTitle: "Quit", action: #selector(quitClick), keyEquivalent: "").target = self
         }
@@ -68,11 +66,7 @@ extension StatusItemManager : NSMenuDelegate {
         let url = URL(string: "https://github.com/dexterleng/vimac/issues")!
         _ = NSWorkspace.shared.open(url)
     }
-    
-    @objc func checkForUpdatesClick() {
-        SUUpdater.shared()?.checkForUpdates(nil)
-    }
-    
+
     @objc func quitClick() {
         NSApplication.shared.terminate(self)
     }

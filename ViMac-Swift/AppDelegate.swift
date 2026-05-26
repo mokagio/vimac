@@ -10,7 +10,6 @@ import Cocoa
 import AXSwift
 import RxSwift
 import MASShortcut
-import Sparkle
 import LaunchAtLogin
 import Preferences
 
@@ -70,10 +69,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
     func onAXPermissionGranted() {
         closePermissionRequestingWindow()
-        
+
         UIElement.globalMessagingTimeout = 1
-        
-        self.checkForUpdatesInBackground()
+
         self.modeCoordinator = ModeCoordinator()
         self.setupWindowEventAndShortcutObservables()
         self.setupAXAttributeObservables()
@@ -263,12 +261,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         )
     }
     
-    func checkForUpdatesInBackground() {
-        SUUpdater.shared()?.delegate = self
-        SUUpdater.shared()?.sendsSystemProfile = true
-        SUUpdater.shared()?.checkForUpdatesInBackground()
-    }
-
     func pollAccessibility(completion: @escaping () -> Void) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             if AXIsProcessTrusted() {
@@ -299,7 +291,4 @@ extension AppDelegate : NSWindowDelegate {
         var psn = ProcessSerialNumber(highLongOfPSN: 0, lowLongOfPSN: UInt32(kCurrentProcess))
         TransformProcessType(&psn, transformState)
     }
-}
-
-extension AppDelegate : SUUpdaterDelegate {
 }
