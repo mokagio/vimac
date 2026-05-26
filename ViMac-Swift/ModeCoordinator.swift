@@ -84,15 +84,8 @@ class ModeCoordinator: ModeControllerDelegate {
         }
         
         keySequenceListener.start()
-        
+
         os_log("[modeDeactivated]: priorKBLayout=%@, forceKBLayout=%@", log: Log.accessibility, self.priorKBLayout?.id ?? "nil", self.forceKBLayout?.id ?? "nil")
-        
-        let activationCount = UserDefaults.standard.integer(forKey: "hintModeActivationCount")
-        let sentPMFSurvey = UserDefaults.standard.bool(forKey: "shownPMFSurveyAlert")
-        if activationCount > 350 && !sentPMFSurvey {
-            UserDefaults.standard.set(true, forKey: "shownPMFSurveyAlert")
-            showPMFSurvey()
-        }
     }
 
     func setScrollMode() {
@@ -136,9 +129,6 @@ class ModeCoordinator: ModeControllerDelegate {
 
         beforeModeActivation()
 
-        let activationCount = UserDefaults.standard.integer(forKey: "hintModeActivationCount")
-        UserDefaults.standard.set(activationCount + 1, forKey: "hintModeActivationCount")
-
         modeController = HintModeController(app: app, window: window)
         modeController?.delegate = self
         modeController!.activate()
@@ -168,20 +158,6 @@ class ModeCoordinator: ModeControllerDelegate {
         guard let axWindow = axWindowOptional else { return nil }
         
         return Element.initialize(rawElement: axWindow.element)
-    }
-    
-    func showPMFSurvey() {
-        let alert = NSAlert()
-        alert.messageText = "Congrats on hitting 350 activations! 🚀"
-        alert.informativeText = "Mind sharing your experience using Vimac? Your feedback is valuable and will help us make Vimac even better."
-        alert.alertStyle = .informational
-        alert.addButton(withTitle: "Yes!")
-        alert.addButton(withTitle: "No")
-        let response = alert.runModal()
-        if response == .alertFirstButtonReturn {
-            let url = URL(string: "https://vimacapp.com/pmf-survey")!
-            _ = NSWorkspace.shared.open(url)
-        }
     }
     
     func log(_ str: String) {
