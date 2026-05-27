@@ -35,6 +35,10 @@
 		E23A1A8025E62DEA00D71D6E /* HintsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23A1A7F25E62DEA00D71D6E /* HintsViewController.swift */; };
 		E2443FFC25584A9400A23950 /* InputStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2443FFB25584A9400A23950 /* InputStateTests.swift */; };
 		E2A91CFF2B5D000100AB1234 /* KeyboardShortcutsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A91CFE2B5D000100AB1234 /* KeyboardShortcutsTests.swift */; };
+		E2B1A0FF2B5E000100AB1235 /* AlphabetHintsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B1A0FE2B5E000100AB1235 /* AlphabetHintsTests.swift */; };
+		E2B1A0FF2B5E000200AB1235 /* HintModeInputIntentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B1A0FE2B5E000200AB1235 /* HintModeInputIntentTests.swift */; };
+		E2B1A0FF2B5E000300AB1235 /* GeometryUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B1A0FE2B5E000300AB1235 /* GeometryUtilsTests.swift */; };
+		E2B1A0FF2B5E000400AB1235 /* ScrollModeInputStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B1A0FE2B5E000400AB1235 /* ScrollModeInputStateTests.swift */; };
 		E245F9B123941AE8009CA9C6 /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E245F9B023941AE8009CA9C6 /* BorderView.swift */; };
 		E24D0BB6256BEEAE0049EA0A /* ScrollModeInputState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24D0BB5256BEEAE0049EA0A /* ScrollModeInputState.swift */; };
 		E25BBB5B250CC4AA00D11213 /* ObserveFrontmostApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BBB5A250CC4AA00D11213 /* ObserveFrontmostApplicationService.swift */; };
@@ -166,6 +170,10 @@
 		E23A1A7F25E62DEA00D71D6E /* HintsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintsViewController.swift; sourceTree = "<group>"; };
 		E2443FFB25584A9400A23950 /* InputStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputStateTests.swift; sourceTree = "<group>"; };
 		E2A91CFE2B5D000100AB1234 /* KeyboardShortcutsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardShortcutsTests.swift; sourceTree = "<group>"; };
+		E2B1A0FE2B5E000100AB1235 /* AlphabetHintsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetHintsTests.swift; sourceTree = "<group>"; };
+		E2B1A0FE2B5E000200AB1235 /* HintModeInputIntentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintModeInputIntentTests.swift; sourceTree = "<group>"; };
+		E2B1A0FE2B5E000300AB1235 /* GeometryUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryUtilsTests.swift; sourceTree = "<group>"; };
+		E2B1A0FE2B5E000400AB1235 /* ScrollModeInputStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollModeInputStateTests.swift; sourceTree = "<group>"; };
 		E245F9B023941AE8009CA9C6 /* BorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderView.swift; sourceTree = "<group>"; };
 		E24D0BB5256BEEAE0049EA0A /* ScrollModeInputState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollModeInputState.swift; sourceTree = "<group>"; };
 		E25BBB5A250CC4AA00D11213 /* ObserveFrontmostApplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserveFrontmostApplicationService.swift; sourceTree = "<group>"; };
@@ -446,6 +454,10 @@
 				E20D0CB525581B3A00A5CAEE /* TrieTests.swift */,
 				E2443FFB25584A9400A23950 /* InputStateTests.swift */,
 				E2A91CFE2B5D000100AB1234 /* KeyboardShortcutsTests.swift */,
+				E2B1A0FE2B5E000100AB1235 /* AlphabetHintsTests.swift */,
+				E2B1A0FE2B5E000200AB1235 /* HintModeInputIntentTests.swift */,
+				E2B1A0FE2B5E000300AB1235 /* GeometryUtilsTests.swift */,
+				E2B1A0FE2B5E000400AB1235 /* ScrollModeInputStateTests.swift */,
 			);
 			path = "ViMac-SwiftTests";
 			sourceTree = "<group>";
@@ -843,6 +855,10 @@
 				E26172372322968700E396CA /* ViMac_SwiftTests.swift in Sources */,
 				E20D0CB625581B3A00A5CAEE /* TrieTests.swift in Sources */,
 				E2A91CFF2B5D000100AB1234 /* KeyboardShortcutsTests.swift in Sources */,
+				E2B1A0FF2B5E000100AB1235 /* AlphabetHintsTests.swift in Sources */,
+				E2B1A0FF2B5E000200AB1235 /* HintModeInputIntentTests.swift in Sources */,
+				E2B1A0FF2B5E000300AB1235 /* GeometryUtilsTests.swift in Sources */,
+				E2B1A0FF2B5E000400AB1235 /* ScrollModeInputStateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
