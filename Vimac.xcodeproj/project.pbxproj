@@ -199,6 +199,7 @@
 		E270F5C82504D9AE00AD305A /* TraverseGenericElementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraverseGenericElementService.swift; sourceTree = "<group>"; };
 		E270F5CA2504D9DE00AD305A /* TraverseElementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraverseElementService.swift; sourceTree = "<group>"; };
 		E270F5CE2504DC4600AD305A /* TraverseSearchPredicateCompatibleWebAreaElementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraverseSearchPredicateCompatibleWebAreaElementService.swift; sourceTree = "<group>"; };
+		E2516E16C0F16240AB000001 /* Signing.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config/Signing.xcconfig; sourceTree = "<group>"; };
 		E27776E2240B780D00488320 /* LaunchAtLogin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = LaunchAtLogin.xcframework; path = Carthage/Build/LaunchAtLogin.xcframework; sourceTree = "<group>"; };
 		E277A70A25EF8AA100010209 /* AboutPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPreferencesViewController.swift; sourceTree = "<group>"; };
 		E279534A2494C534006D8D7A /* InputListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputListener.swift; sourceTree = "<group>"; };
@@ -364,6 +365,7 @@
 		E26172172322968500E396CA = {
 			isa = PBXGroup;
 			children = (
+				E2516E16C0F16240AB000001 /* Signing.xcconfig */,
 				E26172222322968500E396CA /* ViMac-Swift */,
 				E26172352322968700E396CA /* ViMac-SwiftTests */,
 				E26172402322968700E396CA /* ViMac-SwiftUITests */,
@@ -865,6 +867,7 @@
 /* Begin XCBuildConfiguration section */
 		E26172442322968700E396CA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2516E16C0F16240AB000001 /* Signing.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -929,6 +932,7 @@
 		};
 		E26172452322968700E396CA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2516E16C0F16240AB000001 /* Signing.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -993,9 +997,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "ViMac-Swift/ViMac_Swift.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = LQ2VH8VB84;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1022,9 +1024,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "ViMac-Swift/ViMac_Swift.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = LQ2VH8VB84;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1049,9 +1049,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = LQ2VH8VB84;
 				INFOPLIST_FILE = "ViMac-SwiftTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1072,9 +1070,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = LQ2VH8VB84;
 				INFOPLIST_FILE = "ViMac-SwiftTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1093,7 +1089,6 @@
 			baseConfigurationReference = 5C2149530237D83CD0BBC27E /* Pods-VimacUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "ViMac-SwiftUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1113,7 +1108,6 @@
 			baseConfigurationReference = 7677AB73AD55CB183067A498 /* Pods-VimacUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "ViMac-SwiftUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

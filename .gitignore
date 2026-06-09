@@ -49,6 +49,9 @@ Pods/
 # Bundler-managed gems
 vendor/bundle/
 
+# Local code-signing override (per-developer team id)
+Config/Signing.local.xcconfig
+
 # Verification automation artifacts
 tmp/
 
