@@ -7,9 +7,9 @@ cd "$(dirname "$0")/.."
 CONFIGURATION="${CONFIGURATION:-Debug}"
 DERIVED_DATA="${DERIVED_DATA:-build}"
 
-# BUILD_ENV=CI tells the Vimac target's "Run Script" phase to skip
-# grant-accessibility-permission-dev.scpt, which targets the pre-Sonoma
-# "System Preferences" app name and fails the build on macOS 13+.
+# BUILD_ENV=CI tells the Vimac target's LaunchAtLogin helper-signing phase to
+# ad-hoc sign (codesign --sign -) rather than reach for a Developer ID identity
+# a CLI/CI build doesn't have.
 export BUILD_ENV=CI
 
 # Use a distinct bundle id for dev builds so AppDelegate.isDuplicateAppInstance()
