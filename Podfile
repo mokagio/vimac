@@ -11,9 +11,7 @@ target 'Vimac' do
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
   pod 'MASShortcut'
-  pod 'Sparkle'
   pod 'Preferences'
-  pod 'Analytics', '~> 4.1'
 
   target 'VimacTests' do
     inherit! :search_paths
@@ -25,4 +23,15 @@ target 'Vimac' do
     # Pods for testing
   end
 
+end
+
+# Match the workspace's minimum macOS to every pod target. Without this, pods
+# carry their upstream default (some as low as 10.7), which newer Xcode rejects
+# when they use Foundation types like `Date`.
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['MACOSX_DEPLOYMENT_TARGET'] = '10.14'
+    end
+  end
 end

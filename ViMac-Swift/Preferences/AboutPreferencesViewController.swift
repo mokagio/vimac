@@ -52,7 +52,6 @@ class AboutPreferencesViewController: NSViewController, PreferencePane {
         copyrightNoticeLabel.textColor = .secondaryLabelColor
         
         let buttonsStackView = NSStackView(views: [
-            NSButton(title: "Visit Website", target: self, action: #selector(visitWebsite)),
             NSButton(title: "Github Repository", target: self, action: #selector(visitGithubRepo))
         ])
         buttonsStackView.alignment = .leading
@@ -82,11 +81,6 @@ class AboutPreferencesViewController: NSViewController, PreferencePane {
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
-    }
-    
-    @objc func visitWebsite() {
-        let url = URL(string: "https://vimacapp.com/")!
-        _ = NSWorkspace.shared.open(url)
     }
     
     @objc func visitGithubRepo() {

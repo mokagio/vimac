@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0641B6C36852E3ACDAA72748 /* UserPreferencesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E869CD00CC3B6CEDD0151 /* UserPreferencesTests.swift */; };
 		285448C8DFA037E9228938B9 /* Pods_Vimac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6BBF07B6655F54781C7A225 /* Pods_Vimac.framework */; };
 		ABBC36BE3AB1866C4D803D04 /* Pods_VimacTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3838C26CF2EE35337E477D6 /* Pods_VimacTests.framework */; };
 		DB9977DE63A7DFECC2D9CB88 /* Pods_VimacUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85E207A8CB4C294752F7C738 /* Pods_VimacUITests.framework */; };
+		DFC76BAD2B4DE197E6E260DB /* ElementTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F047A75811744F593DFFDD88 /* ElementTreeTests.swift */; };
 		E204519925F388BC00CBFC7A /* AXManualAccessibilityActivator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E204519825F388BC00CBFC7A /* AXManualAccessibilityActivator.swift */; };
 		E20451A025F3A6D100CBFC7A /* ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E204519F25F3A6D100CBFC7A /* ObservableType.swift */; };
 		E20451B125F3ADB600CBFC7A /* UserDefaultsProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20451B025F3ADB600CBFC7A /* UserDefaultsProperties.swift */; };
@@ -62,9 +64,8 @@
 		E270F5C92504D9AE00AD305A /* TraverseGenericElementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E270F5C82504D9AE00AD305A /* TraverseGenericElementService.swift */; };
 		E270F5CB2504D9DE00AD305A /* TraverseElementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E270F5CA2504D9DE00AD305A /* TraverseElementService.swift */; };
 		E270F5CF2504DC4600AD305A /* TraverseSearchPredicateCompatibleWebAreaElementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E270F5CE2504DC4600AD305A /* TraverseSearchPredicateCompatibleWebAreaElementService.swift */; };
-		E27776E3240B780D00488320 /* LaunchAtLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E27776E2240B780D00488320 /* LaunchAtLogin.framework */; };
-		E27776E4240B780D00488320 /* LaunchAtLogin.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E27776E2240B780D00488320 /* LaunchAtLogin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E27776E8240B784900488320 /* LaunchAtLogin.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = E27776E7240B784900488320 /* LaunchAtLogin.framework.dSYM */; };
+		E27776E3240B780D00488320 /* LaunchAtLogin.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E27776E2240B780D00488320 /* LaunchAtLogin.xcframework */; };
+		E27776E4240B780D00488320 /* LaunchAtLogin.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E27776E2240B780D00488320 /* LaunchAtLogin.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E277A70B25EF8AA100010209 /* AboutPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E277A70A25EF8AA100010209 /* AboutPreferencesViewController.swift */; };
 		E279534B2494C534006D8D7A /* InputListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E279534A2494C534006D8D7A /* InputListener.swift */; };
 		E279534D2494CC69006D8D7A /* ScrollModeInputListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E279534C2494CC69006D8D7A /* ScrollModeInputListener.swift */; };
@@ -74,6 +75,11 @@
 		E28867F0235F54F2001691A5 /* Vimac.icns in Resources */ = {isa = PBXBuildFile; fileRef = E28867EF235F54F1001691A5 /* Vimac.icns */; };
 		E28CB6A825B02A8200554D00 /* VimacKeySequenceListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28CB6A725B02A8200554D00 /* VimacKeySequenceListener.swift */; };
 		E290EF4B24F93343004B1A83 /* QueryWindowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E290EF4A24F93342004B1A83 /* QueryWindowService.swift */; };
+		E2A91CFF2B5D000100AB1234 /* KeyboardShortcutsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A91CFE2B5D000100AB1234 /* KeyboardShortcutsTests.swift */; };
+		E2B1A0FF2B5E000100AB1235 /* AlphabetHintsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B1A0FE2B5E000100AB1235 /* AlphabetHintsTests.swift */; };
+		E2B1A0FF2B5E000200AB1235 /* HintModeInputIntentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B1A0FE2B5E000200AB1235 /* HintModeInputIntentTests.swift */; };
+		E2B1A0FF2B5E000300AB1235 /* GeometryUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B1A0FE2B5E000300AB1235 /* GeometryUtilsTests.swift */; };
+		E2B1A0FF2B5E000400AB1235 /* ScrollModeInputStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B1A0FE2B5E000400AB1235 /* ScrollModeInputStateTests.swift */; };
 		E2C29562234DD7F8001A38D6 /* OverlayWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C29561234DD7F8001A38D6 /* OverlayWindowController.swift */; };
 		E2C29566234DE09C001A38D6 /* ModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C29565234DE09C001A38D6 /* ModeCoordinator.swift */; };
 		E2C29568234DE51F001A38D6 /* ModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C29567234DE51F001A38D6 /* ModeViewController.swift */; };
@@ -87,6 +93,7 @@
 		E2F6C9A3232CE37E00F2975B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26172292322968700E396CA /* Main.storyboard */; };
 		E2F6C9AD232DE89F00F2975B /* HintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F6C9AC232DE89F00F2975B /* HintView.swift */; };
 		E2F6C9AF232DEA1800F2975B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F6C9AE232DEA1800F2975B /* Utils.swift */; };
+		E63290CF064CB49BC68BBA56 /* ScrollModeInputListenerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CFE4129B8960881E8B1C99 /* ScrollModeInputListenerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,24 +120,16 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E27776E4240B780D00488320 /* LaunchAtLogin.framework in Embed Frameworks */,
+				E27776E4240B780D00488320 /* LaunchAtLogin.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E27776E6240B782800488320 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 16;
-			files = (
-				E27776E8240B784900488320 /* LaunchAtLogin.framework.dSYM in CopyFiles */,
-			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		046E869CD00CC3B6CEDD0151 /* UserPreferencesTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserPreferencesTests.swift; sourceTree = "<group>"; };
+		41CFE4129B8960881E8B1C99 /* ScrollModeInputListenerTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScrollModeInputListenerTests.swift; sourceTree = "<group>"; };
 		5C2149530237D83CD0BBC27E /* Pods-VimacUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VimacUITests.debug.xcconfig"; path = "Target Support Files/Pods-VimacUITests/Pods-VimacUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6111F4122FAC89C910EEBF3B /* Pods-Vimac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vimac.release.xcconfig"; path = "Target Support Files/Pods-Vimac/Pods-Vimac.release.xcconfig"; sourceTree = "<group>"; };
 		6929D13B2A1ABBF7F59E68D2 /* Pods-Vimac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vimac.debug.xcconfig"; path = "Target Support Files/Pods-Vimac/Pods-Vimac.debug.xcconfig"; sourceTree = "<group>"; };
@@ -200,8 +199,7 @@
 		E270F5C82504D9AE00AD305A /* TraverseGenericElementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraverseGenericElementService.swift; sourceTree = "<group>"; };
 		E270F5CA2504D9DE00AD305A /* TraverseElementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraverseElementService.swift; sourceTree = "<group>"; };
 		E270F5CE2504DC4600AD305A /* TraverseSearchPredicateCompatibleWebAreaElementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraverseSearchPredicateCompatibleWebAreaElementService.swift; sourceTree = "<group>"; };
-		E27776E2240B780D00488320 /* LaunchAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LaunchAtLogin.framework; path = Carthage/Build/Mac/LaunchAtLogin.framework; sourceTree = "<group>"; };
-		E27776E7240B784900488320 /* LaunchAtLogin.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = LaunchAtLogin.framework.dSYM; path = Carthage/Build/Mac/LaunchAtLogin.framework.dSYM; sourceTree = "<group>"; };
+		E27776E2240B780D00488320 /* LaunchAtLogin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = LaunchAtLogin.xcframework; path = Carthage/Build/LaunchAtLogin.xcframework; sourceTree = "<group>"; };
 		E277A70A25EF8AA100010209 /* AboutPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPreferencesViewController.swift; sourceTree = "<group>"; };
 		E279534A2494C534006D8D7A /* InputListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputListener.swift; sourceTree = "<group>"; };
 		E279534C2494CC69006D8D7A /* ScrollModeInputListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollModeInputListener.swift; sourceTree = "<group>"; };
@@ -211,6 +209,11 @@
 		E28867EF235F54F1001691A5 /* Vimac.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Vimac.icns; sourceTree = SOURCE_ROOT; };
 		E28CB6A725B02A8200554D00 /* VimacKeySequenceListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VimacKeySequenceListener.swift; sourceTree = "<group>"; };
 		E290EF4A24F93342004B1A83 /* QueryWindowService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryWindowService.swift; sourceTree = "<group>"; };
+		E2A91CFE2B5D000100AB1234 /* KeyboardShortcutsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardShortcutsTests.swift; sourceTree = "<group>"; };
+		E2B1A0FE2B5E000100AB1235 /* AlphabetHintsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetHintsTests.swift; sourceTree = "<group>"; };
+		E2B1A0FE2B5E000200AB1235 /* HintModeInputIntentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintModeInputIntentTests.swift; sourceTree = "<group>"; };
+		E2B1A0FE2B5E000300AB1235 /* GeometryUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryUtilsTests.swift; sourceTree = "<group>"; };
+		E2B1A0FE2B5E000400AB1235 /* ScrollModeInputStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollModeInputStateTests.swift; sourceTree = "<group>"; };
 		E2C29561234DD7F8001A38D6 /* OverlayWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayWindowController.swift; sourceTree = "<group>"; };
 		E2C29565234DE09C001A38D6 /* ModeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeCoordinator.swift; sourceTree = "<group>"; };
 		E2C29567234DE51F001A38D6 /* ModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeViewController.swift; sourceTree = "<group>"; };
@@ -225,14 +228,29 @@
 		E2F6C9AC232DE89F00F2975B /* HintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintView.swift; sourceTree = "<group>"; };
 		E2F6C9AE232DEA1800F2975B /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		E3838C26CF2EE35337E477D6 /* Pods_VimacTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VimacTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F047A75811744F593DFFDD88 /* ElementTreeTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ElementTreeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		3FCE14302FD7F0CB00B2A570 /* Config */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		E261721D2322968500E396CA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E27776E3240B780D00488320 /* LaunchAtLogin.framework in Frameworks */,
+				E27776E3240B780D00488320 /* LaunchAtLogin.xcframework in Frameworks */,
 				285448C8DFA037E9228938B9 /* Pods_Vimac.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,7 +290,7 @@
 		A714F2240DB82D97A12A79E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E27776E2240B780D00488320 /* LaunchAtLogin.framework */,
+				E27776E2240B780D00488320 /* LaunchAtLogin.xcframework */,
 				A6BBF07B6655F54781C7A225 /* Pods_Vimac.framework */,
 				E3838C26CF2EE35337E477D6 /* Pods_VimacTests.framework */,
 				85E207A8CB4C294752F7C738 /* Pods_VimacUITests.framework */,
@@ -366,7 +384,7 @@
 		E26172172322968500E396CA = {
 			isa = PBXGroup;
 			children = (
-				E27776E7240B784900488320 /* LaunchAtLogin.framework.dSYM */,
+				3FCE14302FD7F0CB00B2A570 /* Config */,
 				E26172222322968500E396CA /* ViMac-Swift */,
 				E26172352322968700E396CA /* ViMac-SwiftTests */,
 				E26172402322968700E396CA /* ViMac-SwiftUITests */,
@@ -443,6 +461,14 @@
 				E26172382322968700E396CA /* Info.plist */,
 				E20D0CB525581B3A00A5CAEE /* TrieTests.swift */,
 				E2443FFB25584A9400A23950 /* InputStateTests.swift */,
+				E2A91CFE2B5D000100AB1234 /* KeyboardShortcutsTests.swift */,
+				E2B1A0FE2B5E000100AB1235 /* AlphabetHintsTests.swift */,
+				E2B1A0FE2B5E000200AB1235 /* HintModeInputIntentTests.swift */,
+				E2B1A0FE2B5E000300AB1235 /* GeometryUtilsTests.swift */,
+				E2B1A0FE2B5E000400AB1235 /* ScrollModeInputStateTests.swift */,
+				F047A75811744F593DFFDD88 /* ElementTreeTests.swift */,
+				046E869CD00CC3B6CEDD0151 /* UserPreferencesTests.swift */,
+				41CFE4129B8960881E8B1C99 /* ScrollModeInputListenerTests.swift */,
 			);
 			path = "ViMac-SwiftTests";
 			sourceTree = "<group>";
@@ -510,11 +536,9 @@
 				075FA56C1F3C1127C2575CA3 /* [CP] Check Pods Manifest.lock */,
 				E261721C2322968500E396CA /* Sources */,
 				E261721D2322968500E396CA /* Frameworks */,
-				E20696FA23294E25001EFDB2 /* Run Script */,
 				E261721E2322968500E396CA /* Resources */,
 				B3CE1D10BB47F45CF7F30714 /* [CP] Embed Pods Frameworks */,
 				E27776E5240B780D00488320 /* Embed Frameworks */,
-				E27776E6240B782800488320 /* CopyFiles */,
 				E27776E1240B765E00488320 /* ShellScript */,
 			);
 			buildRules = (
@@ -719,25 +743,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Vimac/Pods-Vimac-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E20696FA23294E25001EFDB2 /* Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/newInputFile",
-			);
-			name = "Run Script";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ \"$BUILD_ENV\" != 'CI' ]; then\n    osascript grant-accessibility-permission-dev.scpt;\nfi\n";
-		};
 		E27776E1240B765E00488320 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -753,7 +758,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "origin_helper_path=\"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH/LaunchAtLogin.framework/Resources/LaunchAtLoginHelper.app\"\nhelper_dir=\"$BUILT_PRODUCTS_DIR/$CONTENTS_FOLDER_PATH/Library/LoginItems\"\nhelper_path=\"$helper_dir/LaunchAtLoginHelper.app\"\n\nrm -rf \"$helper_path\"\nmkdir -p \"$helper_dir\"\ncp -rf \"$origin_helper_path\" \"$helper_dir/\"\n\ndefaults write \"$helper_path/Contents/Info\" CFBundleIdentifier -string \"$PRODUCT_BUNDLE_IDENTIFIER-LaunchAtLoginHelper\"\n\nif [[ -n $CODE_SIGN_ENTITLEMENTS ]]; then\n    codesign --force --entitlements=\"$CODE_SIGN_ENTITLEMENTS\" --options=runtime --sign=\"$EXPANDED_CODE_SIGN_IDENTITY_NAME\" \"$helper_path\"\nelse\n    codesign --force --options=runtime --sign=\"$EXPANDED_CODE_SIGN_IDENTITY_NAME\" \"$helper_path\"\nfi\n\nframework_path=\"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH/LaunchAtLogin.framework\"\ncodesign --verbose --force --deep -o runtime --sign \"$EXPANDED_CODE_SIGN_IDENTITY_NAME\" \"$framework_path/Versions/A/Resources/LaunchAtLoginHelper.app/Contents/MacOS/LaunchAtLoginHelper\"\n";
+			shellScript = "origin_helper_path=\"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH/LaunchAtLogin.framework/Resources/LaunchAtLoginHelper.app\"\nhelper_dir=\"$BUILT_PRODUCTS_DIR/$CONTENTS_FOLDER_PATH/Library/LoginItems\"\nhelper_path=\"$helper_dir/LaunchAtLoginHelper.app\"\n\nrm -rf \"$helper_path\"\nmkdir -p \"$helper_dir\"\ncp -rf \"$origin_helper_path\" \"$helper_dir/\"\n\ndefaults write \"$helper_path/Contents/Info\" CFBundleIdentifier -string \"$PRODUCT_BUNDLE_IDENTIFIER-LaunchAtLoginHelper\"\n\n# Ad-hoc sign when invoked from CLI/CI (no signing identity in keychain).\nif [ \"$BUILD_ENV\" = 'CI' ]; then\n    sign_identity=\"-\"\nelse\n    sign_identity=\"$EXPANDED_CODE_SIGN_IDENTITY_NAME\"\nfi\n\nif [[ -n $CODE_SIGN_ENTITLEMENTS ]]; then\n    codesign --force --entitlements=\"$CODE_SIGN_ENTITLEMENTS\" --options=runtime --sign=\"$sign_identity\" \"$helper_path\"\nelse\n    codesign --force --options=runtime --sign=\"$sign_identity\" \"$helper_path\"\nfi\n\nframework_path=\"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH/LaunchAtLogin.framework\"\ncodesign --verbose --force --deep -o runtime --sign \"$sign_identity\" \"$framework_path/Versions/A/Resources/LaunchAtLoginHelper.app/Contents/MacOS/LaunchAtLoginHelper\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -839,6 +844,14 @@
 				E2443FFC25584A9400A23950 /* InputStateTests.swift in Sources */,
 				E26172372322968700E396CA /* ViMac_SwiftTests.swift in Sources */,
 				E20D0CB625581B3A00A5CAEE /* TrieTests.swift in Sources */,
+				E2A91CFF2B5D000100AB1234 /* KeyboardShortcutsTests.swift in Sources */,
+				E2B1A0FF2B5E000100AB1235 /* AlphabetHintsTests.swift in Sources */,
+				E2B1A0FF2B5E000200AB1235 /* HintModeInputIntentTests.swift in Sources */,
+				E2B1A0FF2B5E000300AB1235 /* GeometryUtilsTests.swift in Sources */,
+				E2B1A0FF2B5E000400AB1235 /* ScrollModeInputStateTests.swift in Sources */,
+				DFC76BAD2B4DE197E6E260DB /* ElementTreeTests.swift in Sources */,
+				0641B6C36852E3ACDAA72748 /* UserPreferencesTests.swift in Sources */,
+				E63290CF064CB49BC68BBA56 /* ScrollModeInputListenerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -879,6 +892,8 @@
 /* Begin XCBuildConfiguration section */
 		E26172442322968700E396CA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 3FCE14302FD7F0CB00B2A570 /* Config */;
+			baseConfigurationReferenceRelativePath = Signing.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -943,6 +958,8 @@
 		};
 		E26172452322968700E396CA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 3FCE14302FD7F0CB00B2A570 /* Config */;
+			baseConfigurationReferenceRelativePath = Signing.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1007,13 +1024,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "ViMac-Swift/ViMac_Swift.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = LQ2VH8VB84;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Carthage/Build",
 				);
 				INFOPLIST_FILE = "ViMac-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1036,13 +1051,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "ViMac-Swift/ViMac_Swift.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = LQ2VH8VB84;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Carthage/Build",
 				);
 				INFOPLIST_FILE = "ViMac-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1063,9 +1076,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = LQ2VH8VB84;
 				INFOPLIST_FILE = "ViMac-SwiftTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1086,9 +1097,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = LQ2VH8VB84;
 				INFOPLIST_FILE = "ViMac-SwiftTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1107,7 +1116,6 @@
 			baseConfigurationReference = 5C2149530237D83CD0BBC27E /* Pods-VimacUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "ViMac-SwiftUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1127,7 +1135,6 @@
 			baseConfigurationReference = 7677AB73AD55CB183067A498 /* Pods-VimacUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "ViMac-SwiftUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

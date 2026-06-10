@@ -1,0 +1,18 @@
+default_platform(:mac)
+
+platform :mac do
+  desc "Build an unsigned Debug .app"
+  lane :build do |configuration: 'Debug'|
+    sh("CONFIGURATION=#{configuration.shellescape} ../scripts/build.sh")
+  end
+
+  desc "Run the VimacTests unit-test bundle"
+  lane :test do
+    sh("../scripts/test.sh")
+  end
+
+  desc "Launch the built app and capture its Preferences window"
+  lane :screenshot do |output: 'tmp/screenshots', window_name: 'General'|
+    sh("OUTPUT_DIR=#{output.shellescape} WINDOW_NAME=#{window_name.shellescape} ../scripts/screenshot.sh")
+  end
+end

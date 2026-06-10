@@ -10,7 +10,6 @@ import Carbon
 import Cocoa
 import AXSwift
 import RxSwift
-import Segment
 import os
 import UserNotifications
 
@@ -35,11 +34,11 @@ class ModeCoordinator: ModeControllerDelegate {
         self.forceKBLayoutObservation = observeForceKBInputSource()
         
         disposeBag.insert(keySequenceListener.scrollMode.bind(onNext: { [weak self] _ in
-            self?.setScrollMode(mechanism: "Key Sequence")
+            self?.setScrollMode()
         }))
-        
+
         disposeBag.insert(keySequenceListener.hintMode.bind(onNext: { [weak self] _ in
-            self?.setHintMode(mechanism: "Key Sequence")
+            self?.setHintMode()
         }))
         
         UserDefaultsProperties.holdSpaceHintModeActivationEnabled.readLive()
@@ -85,53 +84,41 @@ class ModeCoordinator: ModeControllerDelegate {
         }
         
         keySequenceListener.start()
-        
+
         os_log("[modeDeactivated]: priorKBLayout=%@, forceKBLayout=%@", log: Log.accessibility, self.priorKBLayout?.id ?? "nil", self.forceKBLayout?.id ?? "nil")
-        
-        let activationCount = UserDefaults.standard.integer(forKey: "hintModeActivationCount")
-        let sentPMFSurvey = UserDefaults.standard.bool(forKey: "shownPMFSurveyAlert")
-        if activationCount > 350 && !sentPMFSurvey {
-            UserDefaults.standard.set(true, forKey: "shownPMFSurveyAlert")
-            showPMFSurvey()
-        }
     }
 
-    func setScrollMode(mechanism: String) {
+    func setScrollMode() {
         if let modeController = modeController {
             modeController.deactivate()
         }
-        
+
         guard let frontmostApp = NSWorkspace.shared.frontmostApplication,
             let focusedWindow = focusedWindow(app: frontmostApp) else {
             return
         }
-        
+
         // the app crashes when talking to its own accessibility server
         let isTargetVimac = frontmostApp.bundleIdentifier == Bundle.main.bundleIdentifier
         if isTargetVimac {
             return
         }
-        
+
         beforeModeActivation()
-        
-        Analytics.shared().track("Scroll Mode Activated", properties: [
-            "Target Application": frontmostApp.bundleIdentifier as Any,
-            "Activation Mechanism": mechanism
-        ])
-        
+
         modeController = ScrollModeController(window: focusedWindow)
         modeController?.delegate = self
         modeController!.activate()
     }
-    
-    func setHintMode(mechanism: String) {
+
+    func setHintMode() {
         if let modeController = modeController {
             modeController.deactivate()
         }
-        
+
         let app = NSWorkspace.shared.frontmostApplication
         let window = app.flatMap { focusedWindow(app: $0) }
-        
+
         if let app = app {
             // the app crashes when talking to its own accessibility server
             let isTargetVimac = app.bundleIdentifier == Bundle.main.bundleIdentifier
@@ -139,17 +126,9 @@ class ModeCoordinator: ModeControllerDelegate {
                 return
             }
         }
-        
+
         beforeModeActivation()
-        
-        Analytics.shared().track("Hint Mode Activated", properties: [
-            "Target Application": app?.bundleIdentifier as Any,
-            "Activation Mechanism": mechanism
-        ])
-        
-        let activationCount = UserDefaults.standard.integer(forKey: "hintModeActivationCount")
-        UserDefaults.standard.set(activationCount + 1, forKey: "hintModeActivationCount")
-        
+
         modeController = HintModeController(app: app, window: window)
         modeController?.delegate = self
         modeController!.activate()
@@ -181,26 +160,6 @@ class ModeCoordinator: ModeControllerDelegate {
         return Element.initialize(rawElement: axWindow.element)
     }
     
-    func showPMFSurvey() {
-        Analytics.shared().track("PMF Survey Alert Shown")
-        
-        let alert = NSAlert()
-        alert.messageText = "Congrats on hitting 350 activations! 🚀"
-        alert.informativeText = "Mind sharing your experience using Vimac? Your feedback is valuable and will help us make Vimac even better."
-        alert.alertStyle = .informational
-        alert.addButton(withTitle: "Yes!")
-        alert.addButton(withTitle: "No")
-        let response = alert.runModal()
-        if response == .alertFirstButtonReturn {
-            Analytics.shared().track("Opening PMF Survey")
-
-            let url = URL(string: "https://vimacapp.com/pmf-survey?anon-id=\(Analytics.shared().getAnonymousId())")!
-            _ = NSWorkspace.shared.open(url)
-        } else {
-            Analytics.shared().track("PMF Survey Alert Dismissed")
-        }
-    }
-    
     func log(_ str: String) {
         os_log("%@", str)
     }
@@ -215,7 +174,7 @@ extension ModeCoordinator: HoldKeyListenerDelegate {
             }
         }
 
-        self.setHintMode(mechanism: "Hold Space")
+        self.setHintMode()
     }
 }
 

@@ -6,6 +6,7 @@
 //  Copyright © 2020 Dexter Leng. All rights reserved.
 //
 
+#import <CoreGraphics/CoreGraphics.h>
 #import "HideCursorGlobally.h"
 
 @implementation HideCursorGlobally

@@ -1,0 +1,10 @@
+// Code signing shared across every target.
+//
+// To sign with your own Apple Developer team without editing tracked files,
+// create `Config/Signing.local.xcconfig` and set `DEVELOPMENT_TEAM` there — it
+// is gitignored and wins over the default below.
+
+DEVELOPMENT_TEAM = LQ2VH8VB84
+CODE_SIGN_STYLE = Automatic
+
+#include? "Signing.local.xcconfig"

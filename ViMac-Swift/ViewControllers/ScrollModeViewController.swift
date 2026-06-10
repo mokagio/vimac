@@ -8,7 +8,6 @@
 
 import Cocoa
 import RxSwift
-import Segment
 
 class ScrollModeViewController: ModeViewController {
     weak var delegate: ScrollModeController?
@@ -66,11 +65,10 @@ class ScrollModeViewController: ModeViewController {
         let escEvents = inputListener.keyDownEvents.filter { $0.keyCode == kVK_Escape }
         return escEvents
             .bind(onNext: { [weak self] _ in
-                Analytics.shared().track("Scroll Mode Deactivated with Escape")
                 self?.delegate?.deactivate()
             })
     }
-    
+
     private func observeControlLeftBracketKeyCombo() -> Disposable {
         let controlLeftBracketEvents = inputListener.keyDownEvents.filter {
             $0.keyCode == kVK_ANSI_LeftBracket &&
@@ -78,7 +76,6 @@ class ScrollModeViewController: ModeViewController {
         }
         return controlLeftBracketEvents
             .bind(onNext: { [weak self] _ in
-                Analytics.shared().track("Scroll Mode Deactivated with Control + [")
                 self?.delegate?.deactivate()
             })
     }

@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import Sparkle
 import Preferences
 
 class StatusItemManager: NSObject {
@@ -32,14 +31,12 @@ extension StatusItemManager : NSMenuDelegate {
     func menuWillOpen(_ _menu: NSMenu) {
         if let menu = statusItem.menu {
             menu.removeAllItems()
-            menu.addItem(withTitle: "Manual", action: #selector(manualClick), keyEquivalent: "").target = self
             menu.addItem(withTitle: "Report bugs / Suggest features", action: #selector(openGithubIssues), keyEquivalent: "").target = self
             menu.addItem(withTitle: "Follow Vimac on Twitter", action: #selector(followVimacClick), keyEquivalent: "").target = self
             menu.addItem(NSMenuItem.separator())
             
             menu.addItem(withTitle: "About", action: #selector(aboutClick), keyEquivalent: "").target = self
             menu.addItem(withTitle: "Preferences", action: #selector(preferencesClick), keyEquivalent: "").target = self
-            menu.addItem(withTitle: "Check for updates", action: #selector(checkForUpdatesClick), keyEquivalent: "").target = self
             menu.addItem(NSMenuItem.separator())
             menu.addItem(withTitle: "Quit", action: #selector(quitClick), keyEquivalent: "").target = self
         }
@@ -53,12 +50,6 @@ extension StatusItemManager : NSMenuDelegate {
         preferencesWindowController.show(preferencePane: .about)
     }
 
-    @objc func manualClick() {
-        let url = URL(string: "https://vimacapp.com/manual")!
-        _ = NSWorkspace.shared.open(url)
-    }
-
-    
     @objc func followVimacClick() {
         let url = URL(string: "https://twitter.com/vimacapp")!
         _ = NSWorkspace.shared.open(url)
@@ -68,11 +59,7 @@ extension StatusItemManager : NSMenuDelegate {
         let url = URL(string: "https://github.com/dexterleng/vimac/issues")!
         _ = NSWorkspace.shared.open(url)
     }
-    
-    @objc func checkForUpdatesClick() {
-        SUUpdater.shared()?.checkForUpdates(nil)
-    }
-    
+
     @objc func quitClick() {
         NSApplication.shared.terminate(self)
     }
