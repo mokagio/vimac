@@ -97,7 +97,7 @@ Fastlane lanes (`bundle exec fastlane build`, `test`, `screenshot`) wrap the
 same scripts for environments that prefer that entry point.
 
 The bundle identifier is defined once, in `Config/Project.xcconfig`.
-Dev and test builds append a suffix to it (`.dev`, `.test`) so they don't
+Dev and test builds append a suffix to it (`-dev`, `-test`) so they don't
 trigger `AppDelegate.isDuplicateAppInstance()` when an installed copy of Vimac
 is also running; set `BUNDLE_ID_SUFFIX=` to build under the shipping id.
 `make test` uses an isolated `UserDefaults` suite per test, so it will not

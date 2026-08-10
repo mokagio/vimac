@@ -15,7 +15,7 @@ export BUILD_ENV=CI
 # Suffix the bundle id so AppDelegate.isDuplicateAppInstance() doesn't terminate
 # this build when the user's installed Vimac is running. Pass an empty string to
 # build under the shipping id. The base lives in Config/Project.xcconfig.
-BUNDLE_ID_SUFFIX="${BUNDLE_ID_SUFFIX-.dev}"
+BUNDLE_ID_SUFFIX="${BUNDLE_ID_SUFFIX--dev}"
 
 xcodebuild \
   -workspace Vimac.xcworkspace \
