@@ -1081,7 +1081,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "dexterleng.ViMac-SwiftTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BASE_BUNDLE_ID)-tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vimac.app/Contents/MacOS/Vimac";
@@ -1102,7 +1102,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "dexterleng.ViMac-SwiftTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BASE_BUNDLE_ID)-tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vimac.app/Contents/MacOS/Vimac";
@@ -1121,7 +1121,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "dexterleng.ViMac-SwiftUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BASE_BUNDLE_ID)-uitests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = "ViMac-Swift";
@@ -1140,7 +1140,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "dexterleng.ViMac-SwiftUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BASE_BUNDLE_ID)-uitests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = "ViMac-Swift";
