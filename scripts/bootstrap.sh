@@ -13,8 +13,11 @@ bundle install
 
 bundle exec pod install
 
-if [[ ! -d Carthage/Build ]]; then
+# Test for the xcframework itself: a checkout that predates --use-xcframeworks
+# leaves a Carthage/Build/Mac/ tree that satisfies a directory check while the
+# build still fails for want of Carthage/Build/LaunchAtLogin.xcframework.
+if [[ ! -d Carthage/Build/LaunchAtLogin.xcframework ]]; then
   carthage build --use-xcframeworks --platform macOS
 else
-  echo "bootstrap: Carthage/Build present, skipping carthage build (delete to force)."
+  echo "bootstrap: LaunchAtLogin.xcframework present, skipping carthage build (delete to force)."
 fi
