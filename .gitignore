@@ -50,7 +50,7 @@ Pods/
 vendor/bundle/
 
 # Local code-signing override (per-developer team id)
-Config/Signing.local.xcconfig
+Config/Project.local.xcconfig
 
 # Verification automation artifacts
 tmp/

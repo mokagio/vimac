@@ -1,0 +1,17 @@
+// Project-wide build settings, shared across every target.
+//
+// To sign with your own Apple Developer team without editing tracked files,
+// create `Config/Project.local.xcconfig` and set `DEVELOPMENT_TEAM` there — it
+// is gitignored and wins over the default below.
+
+DEVELOPMENT_TEAM = LQ2VH8VB84
+CODE_SIGN_STYLE = Automatic
+
+// The one place the bundle identifier is spelled out. Builds that need to run
+// alongside an installed copy pass a suffix instead of restating the whole id:
+// `scripts/build.sh` uses `.dev`, `scripts/test.sh` uses `.test`.
+BASE_BUNDLE_ID = dexterleng.vimac
+BUNDLE_ID_SUFFIX =
+PRODUCT_BUNDLE_IDENTIFIER = $(BASE_BUNDLE_ID)$(BUNDLE_ID_SUFFIX)
+
+#include? "Project.local.xcconfig"

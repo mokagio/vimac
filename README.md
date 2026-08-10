@@ -96,9 +96,10 @@ make screenshot  # launch, open Preferences, capture PNG to tmp/screenshots/
 Fastlane lanes (`bundle exec fastlane build`, `test`, `screenshot`) wrap the
 same scripts for environments that prefer that entry point.
 
-Dev builds get the bundle id `dexterleng.vimac.dev` so they don't trigger
-`AppDelegate.isDuplicateAppInstance()` when an installed copy of Vimac is
-also running.
+The bundle identifier is defined once, in `Config/Project.xcconfig`.
+Dev and test builds append a suffix to it (`.dev`, `.test`) so they don't
+trigger `AppDelegate.isDuplicateAppInstance()` when an installed copy of Vimac
+is also running; set `BUNDLE_ID_SUFFIX=` to build under the shipping id.
 `make test` uses an isolated `UserDefaults` suite per test, so it will not
 disturb the shortcuts of an installed copy.
 

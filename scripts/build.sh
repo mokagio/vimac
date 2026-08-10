@@ -12,9 +12,10 @@ DERIVED_DATA="${DERIVED_DATA:-build}"
 # a CLI/CI build doesn't have.
 export BUILD_ENV=CI
 
-# Use a distinct bundle id for dev builds so AppDelegate.isDuplicateAppInstance()
-# doesn't terminate this build when the user's installed Vimac is running.
-PRODUCT_BUNDLE_ID="${PRODUCT_BUNDLE_ID:-dexterleng.vimac.dev}"
+# Suffix the bundle id so AppDelegate.isDuplicateAppInstance() doesn't terminate
+# this build when the user's installed Vimac is running. Pass an empty string to
+# build under the shipping id. The base lives in Config/Project.xcconfig.
+BUNDLE_ID_SUFFIX="${BUNDLE_ID_SUFFIX-.dev}"
 
 xcodebuild \
   -workspace Vimac.xcworkspace \
@@ -24,5 +25,5 @@ xcodebuild \
   CODE_SIGN_IDENTITY="-" \
   CODE_SIGNING_ALLOWED=YES \
   CODE_SIGNING_REQUIRED=NO \
-  PRODUCT_BUNDLE_IDENTIFIER="$PRODUCT_BUNDLE_ID" \
+  BUNDLE_ID_SUFFIX="$BUNDLE_ID_SUFFIX" \
   build

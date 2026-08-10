@@ -893,7 +893,7 @@
 		E26172442322968700E396CA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = 3FCE14302FD7F0CB00B2A570 /* Config */;
-			baseConfigurationReferenceRelativePath = Signing.xcconfig;
+			baseConfigurationReferenceRelativePath = Project.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -959,7 +959,7 @@
 		E26172452322968700E396CA /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = 3FCE14302FD7F0CB00B2A570 /* Config */;
-			baseConfigurationReferenceRelativePath = Signing.xcconfig;
+			baseConfigurationReferenceRelativePath = Project.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1035,7 +1035,6 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dexterleng.vimac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ViMac-Swift/VimacBridgingHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1062,7 +1061,6 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dexterleng.vimac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ViMac-Swift/VimacBridgingHeader.h";
 				SWIFT_VERSION = 5.0;

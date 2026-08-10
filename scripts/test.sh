@@ -22,5 +22,5 @@ xcodebuild \
   CODE_SIGNING_ALLOWED=YES \
   CODE_SIGNING_REQUIRED=NO \
   FRAMEWORK_SEARCH_PATHS='$(inherited) $(PROJECT_DIR)/Carthage/Build/Mac' \
-  PRODUCT_BUNDLE_IDENTIFIER='dexterleng.vimac.test' \
+  BUNDLE_ID_SUFFIX='.test' \
   test
