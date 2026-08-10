@@ -6,9 +6,10 @@
 //  Copyright © 2019 Dexter Leng. All rights reserved.
 //
 
+import Foundation
 import os
 
-private let subsystem = "com.dexterleng.vimac"
+private let subsystem = Bundle.main.bundleIdentifier ?? "vimac"
 
 struct Log {
     static let accessibility = OSLog(subsystem: subsystem, category: "accessiblity")
