@@ -24,8 +24,8 @@ formatter=(cat)
 command -v xcbeautify >/dev/null && formatter=(xcbeautify)
 
 xcodebuild \
-  -workspace Vimac.xcworkspace \
-  -scheme "Vimac (Vimac Workspace)" \
+  -project Vimac.xcodeproj \
+  -scheme Vimac \
   -configuration "$CONFIGURATION" \
   -derivedDataPath "$DERIVED_DATA" \
   BUNDLE_ID_SUFFIX="$BUNDLE_ID_SUFFIX" \

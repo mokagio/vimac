@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0641B6C36852E3ACDAA72748 /* UserPreferencesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E869CD00CC3B6CEDD0151 /* UserPreferencesTests.swift */; };
-		285448C8DFA037E9228938B9 /* Pods_Vimac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6BBF07B6655F54781C7A225 /* Pods_Vimac.framework */; };
 		389BE87658AFCE555909F728 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 7DC3B29EA0B33BE29647D1C8 /* LaunchAtLogin */; };
 		A0C5000000000000000AC503 /* AXSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A0C5000000000000000AC502 /* AXSwift */; };
 		A0C5000000000000000AC513 /* MASShortcut in Frameworks */ = {isa = PBXBuildFile; productRef = A0C5000000000000000AC512 /* MASShortcut */; };
@@ -17,8 +16,6 @@
 		A0C5000000000000000AC533 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A0C5000000000000000AC532 /* RxSwift */; };
 		A0C5000000000000000AC535 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A0C5000000000000000AC534 /* RxCocoa */; };
 		A0C5000000000000000AC537 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = A0C5000000000000000AC536 /* RxRelay */; };
-		ABBC36BE3AB1866C4D803D04 /* Pods_VimacTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3838C26CF2EE35337E477D6 /* Pods_VimacTests.framework */; };
-		DB9977DE63A7DFECC2D9CB88 /* Pods_VimacUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85E207A8CB4C294752F7C738 /* Pods_VimacUITests.framework */; };
 		DFC76BAD2B4DE197E6E260DB /* ElementTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F047A75811744F593DFFDD88 /* ElementTreeTests.swift */; };
 		E204519925F388BC00CBFC7A /* AXManualAccessibilityActivator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E204519825F388BC00CBFC7A /* AXManualAccessibilityActivator.swift */; };
 		E20451A025F3A6D100CBFC7A /* ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E204519F25F3A6D100CBFC7A /* ObservableType.swift */; };
@@ -135,14 +132,6 @@
 /* Begin PBXFileReference section */
 		046E869CD00CC3B6CEDD0151 /* UserPreferencesTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserPreferencesTests.swift; sourceTree = "<group>"; };
 		41CFE4129B8960881E8B1C99 /* ScrollModeInputListenerTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScrollModeInputListenerTests.swift; sourceTree = "<group>"; };
-		5C2149530237D83CD0BBC27E /* Pods-VimacUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VimacUITests.debug.xcconfig"; path = "Target Support Files/Pods-VimacUITests/Pods-VimacUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		6111F4122FAC89C910EEBF3B /* Pods-Vimac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vimac.release.xcconfig"; path = "Target Support Files/Pods-Vimac/Pods-Vimac.release.xcconfig"; sourceTree = "<group>"; };
-		6929D13B2A1ABBF7F59E68D2 /* Pods-Vimac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vimac.debug.xcconfig"; path = "Target Support Files/Pods-Vimac/Pods-Vimac.debug.xcconfig"; sourceTree = "<group>"; };
-		7677AB73AD55CB183067A498 /* Pods-VimacUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VimacUITests.release.xcconfig"; path = "Target Support Files/Pods-VimacUITests/Pods-VimacUITests.release.xcconfig"; sourceTree = "<group>"; };
-		824743387EB077A984803D5C /* Pods-VimacTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VimacTests.debug.xcconfig"; path = "Target Support Files/Pods-VimacTests/Pods-VimacTests.debug.xcconfig"; sourceTree = "<group>"; };
-		85E207A8CB4C294752F7C738 /* Pods_VimacUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VimacUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A6BBF07B6655F54781C7A225 /* Pods_Vimac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vimac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D3D6841E02A20AE804E019B5 /* Pods-VimacTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VimacTests.release.xcconfig"; path = "Target Support Files/Pods-VimacTests/Pods-VimacTests.release.xcconfig"; sourceTree = "<group>"; };
 		E204519825F388BC00CBFC7A /* AXManualAccessibilityActivator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AXManualAccessibilityActivator.swift; sourceTree = "<group>"; };
 		E204519F25F3A6D100CBFC7A /* ObservableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableType.swift; sourceTree = "<group>"; };
 		E20451B025F3ADB600CBFC7A /* UserDefaultsProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProperties.swift; sourceTree = "<group>"; };
@@ -231,7 +220,6 @@
 		E2F15BC625B30C4E00E2F29E /* BindingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingsRepository.swift; sourceTree = "<group>"; };
 		E2F6C9AC232DE89F00F2975B /* HintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintView.swift; sourceTree = "<group>"; };
 		E2F6C9AE232DEA1800F2975B /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		E3838C26CF2EE35337E477D6 /* Pods_VimacTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VimacTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F047A75811744F593DFFDD88 /* ElementTreeTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ElementTreeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -254,7 +242,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				285448C8DFA037E9228938B9 /* Pods_Vimac.framework in Frameworks */,
 				389BE87658AFCE555909F728 /* LaunchAtLogin in Frameworks */,
 				A0C5000000000000000AC503 /* AXSwift in Frameworks */,
 				A0C5000000000000000AC513 /* MASShortcut in Frameworks */,
@@ -269,7 +256,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABBC36BE3AB1866C4D803D04 /* Pods_VimacTests.framework in Frameworks */,
 				A0C5000000000000000AC516 /* MASShortcut in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,36 +264,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB9977DE63A7DFECC2D9CB88 /* Pods_VimacUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		254F6FEBD70DBAD2F1950B43 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6929D13B2A1ABBF7F59E68D2 /* Pods-Vimac.debug.xcconfig */,
-				6111F4122FAC89C910EEBF3B /* Pods-Vimac.release.xcconfig */,
-				824743387EB077A984803D5C /* Pods-VimacTests.debug.xcconfig */,
-				D3D6841E02A20AE804E019B5 /* Pods-VimacTests.release.xcconfig */,
-				5C2149530237D83CD0BBC27E /* Pods-VimacUITests.debug.xcconfig */,
-				7677AB73AD55CB183067A498 /* Pods-VimacUITests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		A714F2240DB82D97A12A79E9 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A6BBF07B6655F54781C7A225 /* Pods_Vimac.framework */,
-				E3838C26CF2EE35337E477D6 /* Pods_VimacTests.framework */,
-				85E207A8CB4C294752F7C738 /* Pods_VimacUITests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		E204519E25F3A6BB00CBFC7A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -399,8 +361,6 @@
 				E26172352322968700E396CA /* ViMac-SwiftTests */,
 				E26172402322968700E396CA /* ViMac-SwiftUITests */,
 				E26172212322968500E396CA /* Products */,
-				254F6FEBD70DBAD2F1950B43 /* Pods */,
-				A714F2240DB82D97A12A79E9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -543,7 +503,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E26172462322968700E396CA /* Build configuration list for PBXNativeTarget "Vimac" */;
 			buildPhases = (
-				075FA56C1F3C1127C2575CA3 /* [CP] Check Pods Manifest.lock */,
 				E261721C2322968500E396CA /* Sources */,
 				E261721D2322968500E396CA /* Frameworks */,
 				E261721E2322968500E396CA /* Resources */,
@@ -571,7 +530,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E26172492322968700E396CA /* Build configuration list for PBXNativeTarget "VimacTests" */;
 			buildPhases = (
-				09527652CB3D2AC0429D8183 /* [CP] Check Pods Manifest.lock */,
 				E261722E2322968700E396CA /* Sources */,
 				E261722F2322968700E396CA /* Frameworks */,
 				E26172302322968700E396CA /* Resources */,
@@ -593,7 +551,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E261724C2322968700E396CA /* Build configuration list for PBXNativeTarget "VimacUITests" */;
 			buildPhases = (
-				532B59306D89F943B5FF30F8 /* [CP] Check Pods Manifest.lock */,
 				E26172392322968700E396CA /* Sources */,
 				E261723A2322968700E396CA /* Frameworks */,
 				E261723B2322968700E396CA /* Resources */,
@@ -685,75 +642,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		075FA56C1F3C1127C2575CA3 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Vimac-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		09527652CB3D2AC0429D8183 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-VimacTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		532B59306D89F943B5FF30F8 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-VimacUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E261721C2322968500E396CA /* Sources */ = {
@@ -1009,7 +897,6 @@
 		};
 		E26172472322968700E396CA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6929D13B2A1ABBF7F59E68D2 /* Pods-Vimac.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1032,7 +919,6 @@
 		};
 		E26172482322968700E396CA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6111F4122FAC89C910EEBF3B /* Pods-Vimac.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1054,7 +940,6 @@
 		};
 		E261724A2322968700E396CA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 824743387EB077A984803D5C /* Pods-VimacTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1075,7 +960,6 @@
 		};
 		E261724B2322968700E396CA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D3D6841E02A20AE804E019B5 /* Pods-VimacTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1096,7 +980,6 @@
 		};
 		E261724D2322968700E396CA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5C2149530237D83CD0BBC27E /* Pods-VimacUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1115,7 +998,6 @@
 		};
 		E261724E2322968700E396CA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7677AB73AD55CB183067A498 /* Pods-VimacUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;

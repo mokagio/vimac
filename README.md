@@ -42,9 +42,12 @@ HJKL keys can be used to scroll within the scroll area.
 ## Building
 
 ```
-make bootstrap
-open Vimac.xcworkspace
+open Vimac.xcodeproj
 ```
+
+Dependencies come from Swift Package Manager, so Xcode resolves them on first
+open — `make bootstrap` is only needed for the Ruby gems behind the fastlane
+lanes.
 
 Signing settings live in `Config/Project.xcconfig`.
 To sign with your own Apple Developer team, set `DEVELOPMENT_TEAM` in a

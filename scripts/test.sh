@@ -18,8 +18,8 @@ command -v xcbeautify >/dev/null && formatter=(xcbeautify)
 # needs Accessibility permission granted to the test runner — run it manually
 # with `xcodebuild test -only-testing:VimacUITests` when that prerequisite is met.
 xcodebuild \
-  -workspace Vimac.xcworkspace \
-  -scheme "Vimac (Vimac Workspace)" \
+  -project Vimac.xcodeproj \
+  -scheme Vimac \
   -configuration Debug \
   -derivedDataPath "$DERIVED_DATA" \
   -only-testing:VimacTests \

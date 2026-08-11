@@ -10,5 +10,3 @@ if ! command -v bundle >/dev/null; then
 fi
 
 bundle install
-
-bundle exec pod install

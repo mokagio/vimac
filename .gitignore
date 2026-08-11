@@ -18,7 +18,6 @@ dsa_priv.pem
 
 # Xcode 4 http://stackoverflow.com/questions/49478/git-ignore-file-for-xcode-projects
 DerivedData/
-Pods/
 *.xcworkspace/xcuserdata/
 
 # Generated files
@@ -43,8 +42,6 @@ CVS
 Backup[ ]of[ ]*.pages/
 Backup[ ]of[ ]*.key/
 Backup[ ]of[ ]*.numbers/
-
-Pods/
 
 # Bundler-managed gems
 vendor/bundle/

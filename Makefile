@@ -6,7 +6,7 @@ SHELL := /bin/bash -o pipefail
 
 help:
 	@echo "Available targets:"
-	@echo "  bootstrap   Install bundler gems and CocoaPods deps"
+	@echo "  bootstrap   Install the bundler gems behind the fastlane lanes"
 	@echo "  build       Build a Debug .app under build/"
 	@echo "  test        Run unit tests (VimacTests target)"
 	@echo "  run         Build (if needed) and launch the Debug .app"
