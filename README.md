@@ -107,6 +107,8 @@ The bundle identifier is defined once, in `Config/Project.xcconfig`.
 Dev and test builds append a suffix to it (`-dev`, `-test`) so they don't
 trigger `AppDelegate.isDuplicateAppInstance()` when an installed copy of Vimac
 is also running; set `BUNDLE_ID_SUFFIX=` to build under the shipping id.
+Those builds are also named apart — "Vimac Dev", "Vimac Test" — so macOS lists
+them distinctly under Privacy &amp; Security.
 `make test` uses an isolated `UserDefaults` suite per test, so it will not
 disturb the shortcuts of an installed copy.
 

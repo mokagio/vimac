@@ -18,4 +18,9 @@ BASE_BUNDLE_ID = com.mokacoding.vimac
 BUNDLE_ID_SUFFIX =
 PRODUCT_BUNDLE_IDENTIFIER = $(BASE_BUNDLE_ID)$(BUNDLE_ID_SUFFIX)
 
+// Appended to `CFBundleDisplayName`, so a dev or test build is named apart
+// from the installed one wherever macOS lists it — the Accessibility pane
+// above all, which otherwise shows several identical "Vimac" rows.
+BUNDLE_NAME_SUFFIX =
+
 #include? "Project.local.xcconfig"

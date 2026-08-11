@@ -27,4 +27,5 @@ xcodebuild \
   CODE_SIGNING_ALLOWED=YES \
   CODE_SIGNING_REQUIRED=NO \
   BUNDLE_ID_SUFFIX='-test' \
+  BUNDLE_NAME_SUFFIX=' Test' \
   test | "${formatter[@]}"
