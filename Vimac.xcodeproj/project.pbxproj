@@ -13,6 +13,7 @@
 		A0C5000000000000000AC503 /* AXSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A0C5000000000000000AC502 /* AXSwift */; };
 		A0C5000000000000000AC513 /* MASShortcut in Frameworks */ = {isa = PBXBuildFile; productRef = A0C5000000000000000AC512 /* MASShortcut */; };
 		A0C5000000000000000AC516 /* MASShortcut in Frameworks */ = {isa = PBXBuildFile; productRef = A0C5000000000000000AC515 /* MASShortcut */; };
+		A0C5000000000000000AC523 /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = A0C5000000000000000AC522 /* Preferences */; };
 		ABBC36BE3AB1866C4D803D04 /* Pods_VimacTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3838C26CF2EE35337E477D6 /* Pods_VimacTests.framework */; };
 		DB9977DE63A7DFECC2D9CB88 /* Pods_VimacUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85E207A8CB4C294752F7C738 /* Pods_VimacUITests.framework */; };
 		DFC76BAD2B4DE197E6E260DB /* ElementTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F047A75811744F593DFFDD88 /* ElementTreeTests.swift */; };
@@ -254,6 +255,7 @@
 				389BE87658AFCE555909F728 /* LaunchAtLogin in Frameworks */,
 				A0C5000000000000000AC503 /* AXSwift in Frameworks */,
 				A0C5000000000000000AC513 /* MASShortcut in Frameworks */,
+				A0C5000000000000000AC523 /* Preferences in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,6 +553,7 @@
 				7DC3B29EA0B33BE29647D1C8 /* LaunchAtLogin */,
 				A0C5000000000000000AC502 /* AXSwift */,
 				A0C5000000000000000AC512 /* MASShortcut */,
+				A0C5000000000000000AC522 /* Preferences */,
 			);
 			productName = "ViMac-Swift";
 			productReference = E26172202322968500E396CA /* Vimac.app */;
@@ -634,6 +637,7 @@
 				432C1013F62F73776D6E996F /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
 				A0C5000000000000000AC501 /* XCRemoteSwiftPackageReference "AXSwift" */,
 				A0C5000000000000000AC511 /* XCRemoteSwiftPackageReference "MASShortcut" */,
+				A0C5000000000000000AC521 /* XCRemoteSwiftPackageReference "Settings" */,
 			);
 			productRefGroup = E26172212322968500E396CA /* Products */;
 			projectDirPath = "";
@@ -1202,6 +1206,14 @@
 				revision = 6f2603c6b6cc18f64a799e5d2c9d3bbc467c413a;
 			};
 		};
+		A0C5000000000000000AC521 /* XCRemoteSwiftPackageReference "Settings" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Settings";
+			requirement = {
+				kind = exactVersion;
+				version = 2.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1224,6 +1236,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A0C5000000000000000AC511 /* XCRemoteSwiftPackageReference "MASShortcut" */;
 			productName = MASShortcut;
+		};
+		A0C5000000000000000AC522 /* Preferences */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0C5000000000000000AC521 /* XCRemoteSwiftPackageReference "Settings" */;
+			productName = Preferences;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
