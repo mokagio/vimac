@@ -1,4 +1,4 @@
-.PHONY: help bootstrap build test run screenshot clean
+.PHONY: help bootstrap build test run install screenshot clean
 
 help:
 	@echo "Available targets:"
@@ -6,6 +6,7 @@ help:
 	@echo "  build       Build a Debug .app under build/"
 	@echo "  test        Run unit tests (VimacTests target)"
 	@echo "  run         Build (if needed) and launch the Debug .app"
+	@echo "  install     Build Release and install it to /Applications"
 	@echo "  screenshot  Launch app, open Preferences, capture to tmp/screenshots/"
 	@echo "  clean       Remove build/ and tmp/"
 
@@ -20,6 +21,9 @@ test:
 
 run:
 	./scripts/run.sh
+
+install:
+	./scripts/install.sh
 
 screenshot:
 	./scripts/screenshot.sh

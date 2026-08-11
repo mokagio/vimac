@@ -89,8 +89,13 @@ Then any of:
 make build       # Debug build under build/, signed with DEVELOPMENT_TEAM
 make test        # VimacTests unit-test bundle (UI tests skipped — they need Accessibility)
 make run         # launch the Debug build (open -n)
+make install     # quit any running copy, build Release, install to /Applications, launch
 make screenshot  # launch, open Preferences, capture PNG to tmp/screenshots/
 ```
+
+`make install` builds under the shipping bundle id and refuses to install if
+what it built carries a suffix.
+Override `INSTALL_DIR` to put it somewhere other than `/Applications`.
 
 Fastlane lanes (`bundle exec fastlane build`, `test`, `screenshot`) wrap the
 same scripts for environments that prefer that entry point.
