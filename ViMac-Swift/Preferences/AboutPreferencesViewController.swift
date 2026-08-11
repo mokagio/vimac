@@ -58,7 +58,7 @@ class AboutPreferencesViewController: NSViewController, PreferencePane {
         attributionLabel.allowsEditingTextAttributes = true
 
         let buttonsStackView = NSStackView(views: [
-            NSButton(title: "Github Repository", target: self, action: #selector(visitGithubRepo))
+            NSButton(title: "Source Code", target: self, action: #selector(visitGithubRepo))
         ])
         buttonsStackView.alignment = .leading
         buttonsStackView.orientation = .horizontal
@@ -92,11 +92,15 @@ class AboutPreferencesViewController: NSViewController, PreferencePane {
     
     private func originalVersionAttributedString() -> NSAttributedString {
         let font = NSFont.labelFont(ofSize: 11)
+        // Colour and underline are set explicitly: left to itself AppKit paints
+        // a link in system blue, which is louder than this line wants to be.
         let string = NSMutableAttributedString(
             string: "Original version",
             attributes: [
                 .link: URL(string: "https://github.com/dexterleng/vimac/")!,
-                .font: font
+                .font: font,
+                .foregroundColor: NSColor.secondaryLabelColor,
+                .underlineStyle: NSUnderlineStyle.single.rawValue
             ]
         )
         string.append(NSAttributedString(
