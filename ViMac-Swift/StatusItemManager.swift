@@ -50,7 +50,7 @@ extension StatusItemManager : NSMenuDelegate {
     }
 
     @objc func openGithubIssues() {
-        let url = URL(string: "https://github.com/dexterleng/vimac/issues")!
+        let url = URL(string: "https://github.com/mokagio/vimac/issues")!
         _ = NSWorkspace.shared.open(url)
     }
 
