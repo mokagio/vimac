@@ -1,5 +1,5 @@
 {
-  "originHash" : "8204eff1064f4da48f1290751eb81cc25ad2a69af99f4184b2cd544ca87b1e37",
+  "originHash" : "4eb69c6500ebe420ce6101112230a15dfac74f09d371478c8646f78dca4b4903",
   "pins" : [
     {
       "identity" : "axswift",
@@ -25,6 +25,15 @@
       "location" : "https://github.com/cocoabits/MASShortcut",
       "state" : {
         "revision" : "6f2603c6b6cc18f64a799e5d2c9d3bbc467c413a"
+      }
+    },
+    {
+      "identity" : "rxswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ReactiveX/RxSwift",
+      "state" : {
+        "revision" : "002d325b0bdee94e7882e1114af5ff4fe1e96afa",
+        "version" : "5.1.1"
       }
     },
     {

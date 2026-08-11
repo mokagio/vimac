@@ -14,6 +14,9 @@
 		A0C5000000000000000AC513 /* MASShortcut in Frameworks */ = {isa = PBXBuildFile; productRef = A0C5000000000000000AC512 /* MASShortcut */; };
 		A0C5000000000000000AC516 /* MASShortcut in Frameworks */ = {isa = PBXBuildFile; productRef = A0C5000000000000000AC515 /* MASShortcut */; };
 		A0C5000000000000000AC523 /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = A0C5000000000000000AC522 /* Preferences */; };
+		A0C5000000000000000AC533 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A0C5000000000000000AC532 /* RxSwift */; };
+		A0C5000000000000000AC535 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A0C5000000000000000AC534 /* RxCocoa */; };
+		A0C5000000000000000AC537 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = A0C5000000000000000AC536 /* RxRelay */; };
 		ABBC36BE3AB1866C4D803D04 /* Pods_VimacTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3838C26CF2EE35337E477D6 /* Pods_VimacTests.framework */; };
 		DB9977DE63A7DFECC2D9CB88 /* Pods_VimacUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85E207A8CB4C294752F7C738 /* Pods_VimacUITests.framework */; };
 		DFC76BAD2B4DE197E6E260DB /* ElementTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F047A75811744F593DFFDD88 /* ElementTreeTests.swift */; };
@@ -256,6 +259,9 @@
 				A0C5000000000000000AC503 /* AXSwift in Frameworks */,
 				A0C5000000000000000AC513 /* MASShortcut in Frameworks */,
 				A0C5000000000000000AC523 /* Preferences in Frameworks */,
+				A0C5000000000000000AC533 /* RxSwift in Frameworks */,
+				A0C5000000000000000AC535 /* RxCocoa in Frameworks */,
+				A0C5000000000000000AC537 /* RxRelay in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,7 +547,6 @@
 				E261721C2322968500E396CA /* Sources */,
 				E261721D2322968500E396CA /* Frameworks */,
 				E261721E2322968500E396CA /* Resources */,
-				B3CE1D10BB47F45CF7F30714 /* [CP] Embed Pods Frameworks */,
 				E27776E5240B780D00488320 /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -554,6 +559,9 @@
 				A0C5000000000000000AC502 /* AXSwift */,
 				A0C5000000000000000AC512 /* MASShortcut */,
 				A0C5000000000000000AC522 /* Preferences */,
+				A0C5000000000000000AC532 /* RxSwift */,
+				A0C5000000000000000AC534 /* RxCocoa */,
+				A0C5000000000000000AC536 /* RxRelay */,
 			);
 			productName = "ViMac-Swift";
 			productReference = E26172202322968500E396CA /* Vimac.app */;
@@ -638,6 +646,7 @@
 				A0C5000000000000000AC501 /* XCRemoteSwiftPackageReference "AXSwift" */,
 				A0C5000000000000000AC511 /* XCRemoteSwiftPackageReference "MASShortcut" */,
 				A0C5000000000000000AC521 /* XCRemoteSwiftPackageReference "Settings" */,
+				A0C5000000000000000AC531 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = E26172212322968500E396CA /* Products */;
 			projectDirPath = "";
@@ -742,23 +751,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B3CE1D10BB47F45CF7F30714 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Vimac/Pods-Vimac-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Vimac/Pods-Vimac-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Vimac/Pods-Vimac-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1214,6 +1206,14 @@
 				version = 2.2.0;
 			};
 		};
+		A0C5000000000000000AC531 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = exactVersion;
+				version = 5.1.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1241,6 +1241,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A0C5000000000000000AC521 /* XCRemoteSwiftPackageReference "Settings" */;
 			productName = Preferences;
+		};
+		A0C5000000000000000AC532 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0C5000000000000000AC531 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		A0C5000000000000000AC534 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0C5000000000000000AC531 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		A0C5000000000000000AC536 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0C5000000000000000AC531 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
