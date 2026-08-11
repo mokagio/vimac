@@ -32,7 +32,6 @@ extension StatusItemManager : NSMenuDelegate {
         if let menu = statusItem.menu {
             menu.removeAllItems()
             menu.addItem(withTitle: "Report bugs / Suggest features", action: #selector(openGithubIssues), keyEquivalent: "").target = self
-            menu.addItem(withTitle: "Follow Vimac on Twitter", action: #selector(followVimacClick), keyEquivalent: "").target = self
             menu.addItem(NSMenuItem.separator())
             
             menu.addItem(withTitle: "About", action: #selector(aboutClick), keyEquivalent: "").target = self
@@ -50,11 +49,6 @@ extension StatusItemManager : NSMenuDelegate {
         preferencesWindowController.show(preferencePane: .about)
     }
 
-    @objc func followVimacClick() {
-        let url = URL(string: "https://twitter.com/vimacapp")!
-        _ = NSWorkspace.shared.open(url)
-    }
-    
     @objc func openGithubIssues() {
         let url = URL(string: "https://github.com/dexterleng/vimac/issues")!
         _ = NSWorkspace.shared.open(url)
