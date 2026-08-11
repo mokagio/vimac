@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0641B6C36852E3ACDAA72748 /* UserPreferencesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E869CD00CC3B6CEDD0151 /* UserPreferencesTests.swift */; };
 		285448C8DFA037E9228938B9 /* Pods_Vimac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6BBF07B6655F54781C7A225 /* Pods_Vimac.framework */; };
+		389BE87658AFCE555909F728 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 7DC3B29EA0B33BE29647D1C8 /* LaunchAtLogin */; };
 		ABBC36BE3AB1866C4D803D04 /* Pods_VimacTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3838C26CF2EE35337E477D6 /* Pods_VimacTests.framework */; };
 		DB9977DE63A7DFECC2D9CB88 /* Pods_VimacUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85E207A8CB4C294752F7C738 /* Pods_VimacUITests.framework */; };
 		DFC76BAD2B4DE197E6E260DB /* ElementTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F047A75811744F593DFFDD88 /* ElementTreeTests.swift */; };
@@ -64,8 +65,6 @@
 		E270F5C92504D9AE00AD305A /* TraverseGenericElementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E270F5C82504D9AE00AD305A /* TraverseGenericElementService.swift */; };
 		E270F5CB2504D9DE00AD305A /* TraverseElementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E270F5CA2504D9DE00AD305A /* TraverseElementService.swift */; };
 		E270F5CF2504DC4600AD305A /* TraverseSearchPredicateCompatibleWebAreaElementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E270F5CE2504DC4600AD305A /* TraverseSearchPredicateCompatibleWebAreaElementService.swift */; };
-		E27776E3240B780D00488320 /* LaunchAtLogin.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E27776E2240B780D00488320 /* LaunchAtLogin.xcframework */; };
-		E27776E4240B780D00488320 /* LaunchAtLogin.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E27776E2240B780D00488320 /* LaunchAtLogin.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E277A70B25EF8AA100010209 /* AboutPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E277A70A25EF8AA100010209 /* AboutPreferencesViewController.swift */; };
 		E279534B2494C534006D8D7A /* InputListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E279534A2494C534006D8D7A /* InputListener.swift */; };
 		E279534D2494CC69006D8D7A /* ScrollModeInputListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E279534C2494CC69006D8D7A /* ScrollModeInputListener.swift */; };
@@ -120,7 +119,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E27776E4240B780D00488320 /* LaunchAtLogin.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -199,7 +197,6 @@
 		E270F5C82504D9AE00AD305A /* TraverseGenericElementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraverseGenericElementService.swift; sourceTree = "<group>"; };
 		E270F5CA2504D9DE00AD305A /* TraverseElementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraverseElementService.swift; sourceTree = "<group>"; };
 		E270F5CE2504DC4600AD305A /* TraverseSearchPredicateCompatibleWebAreaElementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraverseSearchPredicateCompatibleWebAreaElementService.swift; sourceTree = "<group>"; };
-		E27776E2240B780D00488320 /* LaunchAtLogin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = LaunchAtLogin.xcframework; path = Carthage/Build/LaunchAtLogin.xcframework; sourceTree = "<group>"; };
 		E277A70A25EF8AA100010209 /* AboutPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPreferencesViewController.swift; sourceTree = "<group>"; };
 		E279534A2494C534006D8D7A /* InputListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputListener.swift; sourceTree = "<group>"; };
 		E279534C2494CC69006D8D7A /* ScrollModeInputListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollModeInputListener.swift; sourceTree = "<group>"; };
@@ -250,8 +247,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E27776E3240B780D00488320 /* LaunchAtLogin.xcframework in Frameworks */,
 				285448C8DFA037E9228938B9 /* Pods_Vimac.framework in Frameworks */,
+				389BE87658AFCE555909F728 /* LaunchAtLogin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,7 +287,6 @@
 		A714F2240DB82D97A12A79E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E27776E2240B780D00488320 /* LaunchAtLogin.xcframework */,
 				A6BBF07B6655F54781C7A225 /* Pods_Vimac.framework */,
 				E3838C26CF2EE35337E477D6 /* Pods_VimacTests.framework */,
 				85E207A8CB4C294752F7C738 /* Pods_VimacUITests.framework */,
@@ -539,13 +535,15 @@
 				E261721E2322968500E396CA /* Resources */,
 				B3CE1D10BB47F45CF7F30714 /* [CP] Embed Pods Frameworks */,
 				E27776E5240B780D00488320 /* Embed Frameworks */,
-				E27776E1240B765E00488320 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Vimac;
+			packageProductDependencies = (
+				7DC3B29EA0B33BE29647D1C8 /* LaunchAtLogin */,
+			);
 			productName = "ViMac-Swift";
 			productReference = E26172202322968500E396CA /* Vimac.app */;
 			productType = "com.apple.product-type.application";
@@ -621,6 +619,9 @@
 				Base,
 			);
 			mainGroup = E26172172322968500E396CA;
+			packageReferences = (
+				432C1013F62F73776D6E996F /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
+			);
 			productRefGroup = E26172212322968500E396CA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -742,23 +743,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Vimac/Pods-Vimac-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		E27776E1240B765E00488320 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "origin_helper_path=\"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH/LaunchAtLogin.framework/Resources/LaunchAtLoginHelper.app\"\nhelper_dir=\"$BUILT_PRODUCTS_DIR/$CONTENTS_FOLDER_PATH/Library/LoginItems\"\nhelper_path=\"$helper_dir/LaunchAtLoginHelper.app\"\n\nrm -rf \"$helper_path\"\nmkdir -p \"$helper_dir\"\ncp -rf \"$origin_helper_path\" \"$helper_dir/\"\n\ndefaults write \"$helper_path/Contents/Info\" CFBundleIdentifier -string \"$PRODUCT_BUNDLE_IDENTIFIER-LaunchAtLoginHelper\"\n\n# Ad-hoc sign when invoked from CLI/CI (no signing identity in keychain).\nif [ \"$BUILD_ENV\" = 'CI' ]; then\n    sign_identity=\"-\"\nelse\n    sign_identity=\"$EXPANDED_CODE_SIGN_IDENTITY_NAME\"\nfi\n\nif [[ -n $CODE_SIGN_ENTITLEMENTS ]]; then\n    codesign --force --entitlements=\"$CODE_SIGN_ENTITLEMENTS\" --options=runtime --sign=\"$sign_identity\" \"$helper_path\"\nelse\n    codesign --force --options=runtime --sign=\"$sign_identity\" \"$helper_path\"\nfi\n\nframework_path=\"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH/LaunchAtLogin.framework\"\ncodesign --verbose --force --deep -o runtime --sign \"$sign_identity\" \"$framework_path/Versions/A/Resources/LaunchAtLoginHelper.app/Contents/MacOS/LaunchAtLoginHelper\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1024,10 +1008,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "ViMac-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1050,10 +1031,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "ViMac-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1185,6 +1163,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		432C1013F62F73776D6E996F /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin-Modern";
+			requirement = {
+				kind = exactVersion;
+				version = 1.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7DC3B29EA0B33BE29647D1C8 /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 432C1013F62F73776D6E996F /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */;
+			productName = LaunchAtLogin;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E26172182322968500E396CA /* Project object */;
 }

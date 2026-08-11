@@ -46,7 +46,6 @@ HJKL keys can be used to scroll within the scroll area.
 
 ```
 pod install
-carthage build
 open Vimac.xcworkspace
 ```
 

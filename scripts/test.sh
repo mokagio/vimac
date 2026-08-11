@@ -23,6 +23,5 @@ xcodebuild \
   CODE_SIGN_IDENTITY="-" \
   CODE_SIGNING_ALLOWED=YES \
   CODE_SIGNING_REQUIRED=NO \
-  FRAMEWORK_SEARCH_PATHS='$(inherited) $(PROJECT_DIR)/Carthage/Build/Mac' \
   BUNDLE_ID_SUFFIX='-test' \
   test
