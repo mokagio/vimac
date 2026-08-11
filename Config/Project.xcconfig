@@ -7,6 +7,9 @@
 DEVELOPMENT_TEAM = 63EWLY2W55
 CODE_SIGN_STYLE = Automatic
 
+// Read by the `Podfile` too, so pods build against the same minimum.
+MACOSX_DEPLOYMENT_TARGET = 13.0
+
 // The one place the bundle identifier is spelled out. Builds that need to run
 // alongside an installed copy pass a suffix instead of restating the whole id:
 // `scripts/build.sh` uses `-dev`, `scripts/test.sh` uses `-test`. The suffixes

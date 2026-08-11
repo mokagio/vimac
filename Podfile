@@ -1,5 +1,7 @@
-# Uncomment the next line to define a global platform for your project
-platform :osx, '10.14'
+MACOS_DEPLOYMENT_TARGET =
+  File.read('Config/Project.xcconfig')[/^MACOSX_DEPLOYMENT_TARGET\s*=\s*(\S+)/, 1]
+
+platform :osx, MACOS_DEPLOYMENT_TARGET
 
 target 'Vimac' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -31,7 +33,7 @@ end
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
-      config.build_settings['MACOSX_DEPLOYMENT_TARGET'] = '10.14'
+      config.build_settings['MACOSX_DEPLOYMENT_TARGET'] = MACOS_DEPLOYMENT_TARGET
     end
   end
 end
