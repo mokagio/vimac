@@ -6,9 +6,10 @@ Vimac is heavily inspired by [Vimium](https://github.com/philc/vimium/).
 
 ## Getting Started
 
-You can download Vimac [here](https://vimacapp.com). Unzip the file and move `Vimac.app` to `Applications/`.
+This fork ships no prebuilt app.
+Build it from source (see [Building](#building)), then `make install` to put it in `/Applications`.
 
-You can refer to the manual [here](https://vimacapp.com/manual).
+The manual lives in [`docs/manual.md`](docs/manual.md).
 
 ## How does Vimac work?
 
@@ -41,45 +42,21 @@ HJKL keys can be used to scroll within the scroll area.
 ## Building
 
 ```
-pod install
+make bootstrap
 open Vimac.xcworkspace
 ```
 
-Modify the Signing and Capabilities to the following (note the `Disable Library Validation` option):
+Signing settings live in `Config/Project.xcconfig`.
+To sign with your own Apple Developer team, set `DEVELOPMENT_TEAM` in a
+`Config/Project.local.xcconfig` — it is gitignored and overrides the default.
 
-![](docs/remove_signing.png)
-
-Add Vimac and Xcode (for running AppleScript) to the list of Accessibility apps under **System Preferences > Security & Privacy > Accessibility**:
-
-![](docs/vimac_xcode_accessibility.png)
-
-Keep System Preferences open under this section during development with the settings unlocked. This is because the `grant-accessibility-permission-dev.scpt` AppleScript is scheduled to run after each build to re-grant Accessibility permissions.
-
-The AppleScript simply checks and unchecks Vimac to re-grant permissions which are lost after a cleanbuild.
-
-Build Vimac now! You may have to build it several times as the AppleScript may not run well the first time.
-
-At this point running `git status` would bring up:
-
-```
-modified:   ViMac-Swift/ViMac_Swift.entitlements
-modified:   Vimac.xcodeproj/project.pbxproj
-modified:   grant-accessibility-permission-dev.scpt
-```
-
-Avoid committing them.
+Add the build to **System Settings > Privacy & Security > Accessibility**.
+Dev builds are signed with a team identity, so the grant survives rebuilds.
 
 ## Verifying changes from the command line
 
 A `Makefile` wraps the most common verification steps so they don't require
-Xcode UI.
-First time only, install dependencies:
-
-```
-make bootstrap
-```
-
-Then any of:
+Xcode UI:
 
 ```
 make build       # Debug build under build/, signed with DEVELOPMENT_TEAM
@@ -104,7 +81,7 @@ Dev and test builds append a suffix to it (`-dev`, `-test`) so they don't
 trigger `AppDelegate.isDuplicateAppInstance()` when an installed copy of Vimac
 is also running; set `BUNDLE_ID_SUFFIX=` to build under the shipping id.
 Those builds are also named apart — "Vimac Dev", "Vimac Test" — so macOS lists
-them distinctly under Privacy &amp; Security.
+them distinctly under Privacy & Security.
 `make test` uses an isolated `UserDefaults` suite per test, so it will not
 disturb the shortcuts of an installed copy.
 
