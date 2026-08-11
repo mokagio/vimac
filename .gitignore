@@ -18,7 +18,7 @@ dsa_priv.pem
 
 # Xcode 4 http://stackoverflow.com/questions/49478/git-ignore-file-for-xcode-projects
 DerivedData/
-*.xcworkspace/xcuserdata/
+xcuserdata/
 
 # Generated files
 VersionX-revision.h
