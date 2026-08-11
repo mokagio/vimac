@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import MASShortcut
 import Preferences
 
 class BindingsPreferenceViewController: NSViewController, PreferencePane, NSTextFieldDelegate {

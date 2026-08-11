@@ -3,6 +3,7 @@
 //  VimacTests
 //
 
+import Carbon
 import XCTest
 import MASShortcut
 @testable import Vimac
@@ -69,7 +70,7 @@ class KeyboardShortcutsTests: XCTestCase {
     }
 
     func test_legacy_nskeyedarchive_migrated_to_dictionary() throws {
-        let shortcut = MASShortcut(keyCode: Int(kVK_ANSI_F), modifierFlags: [.control])!
+        let shortcut = MASShortcut(keyCode: Int(kVK_ANSI_F), modifierFlags: [.control])
         let archived = try NSKeyedArchiver.archivedData(
             withRootObject: shortcut,
             requiringSecureCoding: true

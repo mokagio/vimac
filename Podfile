@@ -11,7 +11,6 @@ target 'Vimac' do
 
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
-  pod 'MASShortcut'
   pod 'Preferences'
 
   target 'VimacTests' do

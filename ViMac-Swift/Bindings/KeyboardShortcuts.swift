@@ -6,7 +6,9 @@
 //  Copyright © 2021 Dexter Leng. All rights reserved.
 //
 
+import Carbon
 import Cocoa
+import MASShortcut
 import RxSwift
 
 class KeyboardShortcuts {

@@ -6,6 +6,7 @@
 //  Copyright © 2020 Dexter Leng. All rights reserved.
 //
 
+import Carbon
 import Cocoa
 import RxSwift
 

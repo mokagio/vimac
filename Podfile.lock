@@ -1,5 +1,4 @@
 PODS:
-  - MASShortcut (2.4.0)
   - Preferences (2.2.0)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
@@ -9,26 +8,23 @@ PODS:
   - RxSwift (5.1.1)
 
 DEPENDENCIES:
-  - MASShortcut
   - Preferences
   - RxCocoa (~> 5)
   - RxSwift (~> 5)
 
 SPEC REPOS:
   trunk:
-    - MASShortcut
     - Preferences
     - RxCocoa
     - RxRelay
     - RxSwift
 
 SPEC CHECKSUMS:
-  MASShortcut: d9e4909e878661cc42877cc9d6efbe638273ab57
   Preferences: 4894cc28df3557336b0b72440c893d95203d3e33
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
 
-PODFILE CHECKSUM: 39dae180df126daeb4c2809c73f1f77fc8abfa9c
+PODFILE CHECKSUM: bf50a1d0b9eac41cc3844a6303b4e57edd553341
 
 COCOAPODS: 1.16.2
