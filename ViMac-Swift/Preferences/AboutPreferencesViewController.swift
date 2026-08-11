@@ -51,14 +51,20 @@ class AboutPreferencesViewController: NSViewController, PreferencePane {
         copyrightNoticeLabel.font = .labelFont(ofSize: 11)
         copyrightNoticeLabel.textColor = .secondaryLabelColor
 
+        // An `.link` attribute would be repainted system blue by the field
+        // editor a selectable label hands its text to, so the click is handled
+        // here instead and the styling is left alone.
         let attributionLabel = NSTextField(labelWithAttributedString: originalVersionAttributedString())
-        // A label only follows an `.link` attribute once it is selectable and
-        // allowed to keep the attributes it was given.
-        attributionLabel.isSelectable = true
-        attributionLabel.allowsEditingTextAttributes = true
+        attributionLabel.addGestureRecognizer(
+            NSClickGestureRecognizer(target: self, action: #selector(attributionClicked))
+        )
+
+        let sourceCodeButton = NSButton(title: "Source Code", target: self, action: #selector(visitGithubRepo))
+        // Otherwise it opens focused, wearing a focus ring nobody asked for.
+        sourceCodeButton.refusesFirstResponder = true
 
         let buttonsStackView = NSStackView(views: [
-            NSButton(title: "Source Code", target: self, action: #selector(visitGithubRepo))
+            sourceCodeButton
         ])
         buttonsStackView.alignment = .leading
         buttonsStackView.orientation = .horizontal
@@ -90,27 +96,41 @@ class AboutPreferencesViewController: NSViewController, PreferencePane {
         ])
     }
     
+    private static let originalVersionLinkText = "Original version"
+
     private func originalVersionAttributedString() -> NSAttributedString {
-        let font = NSFont.labelFont(ofSize: 11)
-        // Colour and underline are set explicitly: left to itself AppKit paints
-        // a link in system blue, which is louder than this line wants to be.
         let string = NSMutableAttributedString(
-            string: "Original version",
-            attributes: [
-                .link: URL(string: "https://github.com/dexterleng/vimac/")!,
-                .font: font,
-                .foregroundColor: NSColor.secondaryLabelColor,
-                .underlineStyle: NSUnderlineStyle.single.rawValue
-            ]
+            string: Self.originalVersionLinkText,
+            attributes: Self.originalVersionLinkAttributes
         )
         string.append(NSAttributedString(
             string: " by Dexter Leng - 2021",
             attributes: [
-                .font: font,
+                .font: NSFont.labelFont(ofSize: 11),
                 .foregroundColor: NSColor.secondaryLabelColor
             ]
         ))
         return string
+    }
+
+    private static let originalVersionLinkAttributes: [NSAttributedString.Key: Any] = [
+        .font: NSFont.labelFont(ofSize: 11),
+        .foregroundColor: NSColor.secondaryLabelColor,
+        .underlineStyle: NSUnderlineStyle.single.rawValue
+    ]
+
+    @objc private func attributionClicked(_ recognizer: NSClickGestureRecognizer) {
+        guard let label = recognizer.view else { return }
+
+        // Only the leading "Original version" run is a link, so a click past
+        // its width lands on Dexter Leng's name and does nothing.
+        let linkWidth = NSAttributedString(
+            string: Self.originalVersionLinkText,
+            attributes: Self.originalVersionLinkAttributes
+        ).size().width
+        guard recognizer.location(in: label).x <= linkWidth else { return }
+
+        _ = NSWorkspace.shared.open(URL(string: "https://github.com/dexterleng/vimac/")!)
     }
 
     @objc func visitGithubRepo() {
