@@ -1,7 +1,3 @@
-# Announcement
-
-Vimac is now [Homerow](https://homerow.app). Homerow is a refined, sleeker, more performant successor of Vimac, incorporating lessons learned from it's predecessor.
-
 # Vimac - Productive macOS keyboard-driven navigation
 
 Vimac is a macOS productivity application that provides keyboard-driven navigation and control of the macOS Graphical User Interface (GUI).
@@ -120,4 +116,5 @@ script falls back to a full-display capture.
 
 ## Contributing
 
-Feel free to contribute to Vimac. Make sure to open an issue / ask to work on something first!
+Feel free to contribute to Vimac.
+Make sure to open an issue to ask to work on something first!
