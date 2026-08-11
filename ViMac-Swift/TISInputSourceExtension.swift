@@ -49,12 +49,4 @@ extension TISInputSource {
     var sourceLanguages: [String] {
         return getProperty(kTISPropertyInputSourceLanguages) as! [String]
     }
-
-    var iconImageURL: URL? {
-        return getProperty(kTISPropertyIconImageURL) as! URL?
-    }
-
-    var iconRef: IconRef? {
-        return OpaquePointer(TISGetInputSourceProperty(self, kTISPropertyIconRef)) as IconRef?
-    }
 }
