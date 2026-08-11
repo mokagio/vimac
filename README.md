@@ -87,7 +87,7 @@ make bootstrap
 Then any of:
 
 ```
-make build       # unsigned Debug build under build/
+make build       # Debug build under build/, signed with DEVELOPMENT_TEAM
 make test        # VimacTests unit-test bundle (UI tests skipped — they need Accessibility)
 make run         # launch the Debug build (open -n)
 make screenshot  # launch, open Preferences, capture PNG to tmp/screenshots/

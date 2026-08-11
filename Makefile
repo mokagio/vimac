@@ -3,7 +3,7 @@
 help:
 	@echo "Available targets:"
 	@echo "  bootstrap   Install bundler gems, CocoaPods, Carthage deps"
-	@echo "  build       Build an unsigned Debug .app under build/"
+	@echo "  build       Build a Debug .app under build/"
 	@echo "  test        Run unit tests (VimacTests target)"
 	@echo "  run         Build (if needed) and launch the Debug .app"
 	@echo "  screenshot  Launch app, open Preferences, capture to tmp/screenshots/"

@@ -1,7 +1,7 @@
 default_platform(:mac)
 
 platform :mac do
-  desc "Build an unsigned Debug .app"
+  desc "Build a Debug .app"
   lane :build do |configuration: 'Debug'|
     sh("CONFIGURATION=#{configuration.shellescape} ../scripts/build.sh")
   end

@@ -4,7 +4,7 @@
 // create `Config/Project.local.xcconfig` and set `DEVELOPMENT_TEAM` there — it
 // is gitignored and wins over the default below.
 
-DEVELOPMENT_TEAM = LQ2VH8VB84
+DEVELOPMENT_TEAM = 63EWLY2W55
 CODE_SIGN_STYLE = Automatic
 
 // The one place the bundle identifier is spelled out. Builds that need to run

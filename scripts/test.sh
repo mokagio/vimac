@@ -6,7 +6,9 @@ cd "$(dirname "$0")/.."
 
 DERIVED_DATA="${DERIVED_DATA:-build}"
 
-# See scripts/build.sh for why BUILD_ENV=CI is set.
+# Tests keep ad-hoc signing: nothing here is installed or needs a stable TCC
+# grant, and `BUILD_ENV=CI` is what tells the LaunchAtLogin helper-signing phase
+# to use `codesign --sign -`.
 export BUILD_ENV=CI
 
 # VimacTests is the unit-test bundle. The UI-test target is skipped because it
