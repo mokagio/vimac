@@ -12,10 +12,13 @@ DERIVED_DATA="${DERIVED_DATA:-build}"
 # build under the shipping id. The base lives in Config/Project.xcconfig.
 BUNDLE_ID_SUFFIX="${BUNDLE_ID_SUFFIX--dev}"
 
+formatter=(cat)
+command -v xcbeautify >/dev/null && formatter=(xcbeautify)
+
 xcodebuild \
   -workspace Vimac.xcworkspace \
   -scheme "Vimac (Vimac Workspace)" \
   -configuration "$CONFIGURATION" \
   -derivedDataPath "$DERIVED_DATA" \
   BUNDLE_ID_SUFFIX="$BUNDLE_ID_SUFFIX" \
-  build
+  build | "${formatter[@]}"

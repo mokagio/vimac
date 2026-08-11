@@ -11,6 +11,9 @@ DERIVED_DATA="${DERIVED_DATA:-build}"
 # to use `codesign --sign -`.
 export BUILD_ENV=CI
 
+formatter=(cat)
+command -v xcbeautify >/dev/null && formatter=(xcbeautify)
+
 # VimacTests is the unit-test bundle. The UI-test target is skipped because it
 # needs Accessibility permission granted to the test runner — run it manually
 # with `xcodebuild test -only-testing:VimacUITests` when that prerequisite is met.
@@ -24,4 +27,4 @@ xcodebuild \
   CODE_SIGNING_ALLOWED=YES \
   CODE_SIGNING_REQUIRED=NO \
   BUNDLE_ID_SUFFIX='-test' \
-  test
+  test | "${formatter[@]}"

@@ -100,6 +100,9 @@ Override `INSTALL_DIR` to put it somewhere other than `/Applications`.
 Fastlane lanes (`bundle exec fastlane build`, `test`, `screenshot`) wrap the
 same scripts for environments that prefer that entry point.
 
+`xcodebuild` output goes through [`xcbeautify`](https://github.com/cpisciotta/xcbeautify)
+when it is on `PATH` (`brew install xcbeautify`), and raw otherwise.
+
 The bundle identifier is defined once, in `Config/Project.xcconfig`.
 Dev and test builds append a suffix to it (`-dev`, `-test`) so they don't
 trigger `AppDelegate.isDuplicateAppInstance()` when an installed copy of Vimac
