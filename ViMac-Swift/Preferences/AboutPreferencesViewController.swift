@@ -47,10 +47,16 @@ class AboutPreferencesViewController: NSViewController, PreferencePane {
         versionLabel.font = .labelFont(ofSize: 13)
         versionLabel.textColor = .secondaryLabelColor
 
-        let copyrightNoticeLabel = NSTextField(labelWithString: "Copyright © 2021 Dexter Leng.")
+        let copyrightNoticeLabel = NSTextField(labelWithString: "Copyright © 2026 Gio Lodi")
         copyrightNoticeLabel.font = .labelFont(ofSize: 11)
         copyrightNoticeLabel.textColor = .secondaryLabelColor
-        
+
+        let attributionLabel = NSTextField(labelWithAttributedString: originalVersionAttributedString())
+        // A label only follows an `.link` attribute once it is selectable and
+        // allowed to keep the attributes it was given.
+        attributionLabel.isSelectable = true
+        attributionLabel.allowsEditingTextAttributes = true
+
         let buttonsStackView = NSStackView(views: [
             NSButton(title: "Github Repository", target: self, action: #selector(visitGithubRepo))
         ])
@@ -61,6 +67,7 @@ class AboutPreferencesViewController: NSViewController, PreferencePane {
             appNameLabel,
             versionLabel,
             copyrightNoticeLabel,
+            attributionLabel,
             buttonsStackView
         ])
         descriptionStackView.alignment = .leading
@@ -83,8 +90,27 @@ class AboutPreferencesViewController: NSViewController, PreferencePane {
         ])
     }
     
+    private func originalVersionAttributedString() -> NSAttributedString {
+        let font = NSFont.labelFont(ofSize: 11)
+        let string = NSMutableAttributedString(
+            string: "Original version",
+            attributes: [
+                .link: URL(string: "https://github.com/dexterleng/vimac/")!,
+                .font: font
+            ]
+        )
+        string.append(NSAttributedString(
+            string: " by Dexter Leng - 2021",
+            attributes: [
+                .font: font,
+                .foregroundColor: NSColor.secondaryLabelColor
+            ]
+        ))
+        return string
+    }
+
     @objc func visitGithubRepo() {
-        let url = URL(string: "https://github.com/dexterleng/vimac/")!
+        let url = URL(string: "https://github.com/mokagio/vimac/")!
         _ = NSWorkspace.shared.open(url)
     }
 }
