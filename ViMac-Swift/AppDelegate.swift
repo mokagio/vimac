@@ -274,6 +274,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_ aNotification: Notification) {
         self.compositeDisposable.dispose()
 
+        // Both walk every running application over the AX API. Untrusted, each
+        // of those calls blocks until the messaging timeout, which is seconds of
+        // beachball to undo activations that never happened.
+        guard AXIsProcessTrusted() else { return }
+
         AXEnhancedUserInterfaceActivator.deactivateAll()
         AXManualAccessibilityActivator.deactivateAll()
     }
