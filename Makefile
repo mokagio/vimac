@@ -1,3 +1,7 @@
+# Flags ride on SHELL because macOS ships GNU Make 3.81, which predates
+# `.SHELLFLAGS` and ignores it silently.
+SHELL := /bin/bash -o pipefail
+
 .PHONY: help bootstrap build test run install screenshot clean
 
 help:
