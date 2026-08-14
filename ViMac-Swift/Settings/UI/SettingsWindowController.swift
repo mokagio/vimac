@@ -13,8 +13,13 @@ final class SettingsWindowController: NSWindowController {
             rootView: SettingsView(model: model, navigation: navigation)
         )
 
-        let window = NSWindow(contentViewController: hostingController)
-        window.styleMask = [.titled, .closable, .miniaturizable, .resizable]
+        let window = SettingsWindow(
+            contentRect: NSRect(x: 0, y: 0, width: 760, height: 520),
+            styleMask: [.titled, .closable, .miniaturizable, .resizable],
+            backing: .buffered,
+            defer: false
+        )
+        window.contentViewController = hostingController
         window.setContentSize(NSSize(width: 760, height: 520))
         window.contentMinSize = NSSize(width: 680, height: 420)
         window.setFrameAutosaveName("SettingsWindow")

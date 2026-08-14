@@ -13,11 +13,8 @@ struct HintModeSettingsView: View {
                 )
                 ValidationMessage(model.hintCharactersProblem?.message)
             } footer: {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("The characters hints are drawn from. At least \(HintCharacters.minimumCount), each used once.")
-                    Text("An empty field uses the default, which is the greyed-out text.")
-                }
-                .foregroundStyle(.secondary)
+                Text("The characters hints are drawn from. At least \(HintCharacters.minimumCount), each used once.")
+                    .foregroundStyle(.secondary)
             }
 
             Section {
