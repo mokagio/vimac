@@ -15,11 +15,20 @@ final class SettingsWindowController: NSWindowController {
 
         let window = SettingsWindow(
             contentRect: NSRect(x: 0, y: 0, width: 760, height: 520),
-            styleMask: [.titled, .closable, .miniaturizable, .resizable],
+            // `fullSizeContentView` alongside a unified toolbar is what lets the
+            // sidebar run the height of the window and sit flush against its
+            // edge, the way System Settings does. Without it the sidebar draws
+            // as a card inset from the frame.
+            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
             backing: .buffered,
             defer: false
         )
         window.contentViewController = hostingController
+
+        // `toolbarStyle` only takes effect when a toolbar exists. There are no
+        // toolbar items to show — the title is the whole point.
+        window.toolbar = NSToolbar()
+        window.toolbarStyle = .unified
 
         // Left nil, AppKit hands the first pass of focus to the first control
         // in the key view loop — a text field, which selects its contents as it

@@ -44,9 +44,17 @@ enum SettingsPane: String, CaseIterable, Identifiable {
     }
 }
 
-/// The System Settings sidebar look: a tinted, rounded glyph beside the title.
+/// The System Settings sidebar look: a rounded tile beside the title.
+///
+/// Which way round the tile and the glyph are coloured follows the appearance,
+/// the way the system's own sidebar icons do — a filled tile under a white
+/// glyph in light, a dark tile under a coloured glyph in dark. Whether the user
+/// asked for dark icons specifically is not something an app can read, so the
+/// appearance is the closest signal available.
 struct SettingsPaneLabel: View {
     let pane: SettingsPane
+
+    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         Label {
@@ -54,9 +62,17 @@ struct SettingsPaneLabel: View {
         } icon: {
             Image(systemName: pane.symbol)
                 .font(.system(size: 11, weight: .semibold))
-                .foregroundStyle(.white)
+                .foregroundStyle(isDark ? AnyShapeStyle(pane.tint) : AnyShapeStyle(.white))
                 .frame(width: 20, height: 20)
-                .background(pane.tint.gradient, in: .rect(cornerRadius: 5))
+                .background(tile, in: .rect(cornerRadius: 5))
         }
+    }
+
+    private var isDark: Bool { colorScheme == .dark }
+
+    private var tile: AnyShapeStyle {
+        isDark
+            ? AnyShapeStyle(Color.black.opacity(0.45))
+            : AnyShapeStyle(pane.tint.gradient)
     }
 }
