@@ -9,7 +9,7 @@ Vimac is heavily inspired by [Vimium](https://github.com/philc/vimium/).
 This fork ships no prebuilt app.
 Build it from source (see [Building](#building)), then `make install` to put it in `/Applications`.
 
-Requires macOS 14 or later.
+Requires macOS 15 or later.
 
 The manual lives in [`docs/manual.md`](docs/manual.md).
 

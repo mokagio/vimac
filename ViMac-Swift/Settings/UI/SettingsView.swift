@@ -20,6 +20,8 @@ struct SettingsView: View {
             }
             .listStyle(.sidebar)
             .navigationSplitViewColumnWidth(190)
+            // Six fixed panes have no reason to be collapsed out of the way.
+            .toolbar(removing: .sidebarToggle)
         } detail: {
             detail
                 .frame(minWidth: 480, maxWidth: .infinity, maxHeight: .infinity)
