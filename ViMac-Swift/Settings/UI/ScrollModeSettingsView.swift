@@ -22,7 +22,10 @@ struct ScrollModeSettingsView: View {
             Section {
                 LabeledContent("Sensitivity:") {
                     HStack(spacing: 10) {
-                        Slider(value: $model.scrollSensitivity, in: 0...100, step: 1)
+                        // Continuous: a `step` would have SwiftUI draw a tick
+                        // mark per increment, and 100 of them read as a smear.
+                        // The model rounds to a whole number on the way out.
+                        Slider(value: $model.scrollSensitivity, in: 0...100)
                             .frame(width: 200)
                         Text(model.scrollSensitivity.formatted(.number.precision(.fractionLength(0))))
                             .monospacedDigit()
