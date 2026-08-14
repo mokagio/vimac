@@ -62,6 +62,17 @@ final class SettingsModel {
         )
     }
 
+    /// Emptying a field is how the user asks for the default back, so it
+    /// forgets the stored value rather than storing an empty one — which is
+    /// also what leaves the placeholder showing the default on the next launch.
+    private func write(_ value: String, to setting: Setting<String>) {
+        if value.isEmpty {
+            store.reset(setting)
+        } else {
+            store.setValue(value, for: setting)
+        }
+    }
+
     // MARK: - General
 
     var forcedKeyboardLayoutID: String {
@@ -111,7 +122,7 @@ final class SettingsModel {
     }
 
     var keySequenceResetDelay: String {
-        didSet { store.setValue(keySequenceResetDelay, for: VimacSettings.keySequenceResetDelay) }
+        didSet { write(keySequenceResetDelay, to: VimacSettings.keySequenceResetDelay) }
     }
 
     /// Only worth complaining about a sequence the listener is actually asked to use.
@@ -151,11 +162,11 @@ final class SettingsModel {
     // MARK: - Hint mode
 
     var hintCharacters: String {
-        didSet { store.setValue(hintCharacters, for: VimacSettings.hintCharacters) }
+        didSet { write(hintCharacters, to: VimacSettings.hintCharacters) }
     }
 
     var hintTextSize: String {
-        didSet { store.setValue(hintTextSize, for: VimacSettings.hintTextSize) }
+        didSet { write(hintTextSize, to: VimacSettings.hintTextSize) }
     }
 
     var hintCharactersProblem: HintCharacters.Problem? {
@@ -169,7 +180,7 @@ final class SettingsModel {
     // MARK: - Scroll mode
 
     var scrollKeys: String {
-        didSet { store.setValue(scrollKeys, for: VimacSettings.scrollKeys) }
+        didSet { write(scrollKeys, to: VimacSettings.scrollKeys) }
     }
 
     var scrollSensitivity: Double {

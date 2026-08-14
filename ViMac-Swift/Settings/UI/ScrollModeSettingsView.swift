@@ -6,10 +6,12 @@ struct ScrollModeSettingsView: View {
     var body: some View {
         Form {
             Section {
-                LabeledContent("Scroll Keys:") {
-                    TextField(ScrollKeys.defaultValue, text: $model.scrollKeys)
-                        .frame(width: 220)
-                }
+                DefaultableTextField(
+                    title: "Scroll Keys:",
+                    placeholder: ScrollKeys.defaultValue,
+                    text: $model.scrollKeys,
+                    width: 220
+                )
                 ValidationMessage(model.scrollKeysProblem?.message)
             } footer: {
                 VStack(alignment: .leading, spacing: 4) {

@@ -45,14 +45,13 @@ struct BindingsSettingsView: View {
                     problem: model.scrollModeKeySequenceProblem?.message
                 )
 
-                LabeledContent("Reset Delay:") {
-                    HStack(spacing: 6) {
-                        TextField(ResetDelay.defaultValue, text: $model.keySequenceResetDelay)
-                            .frame(width: 80)
-                        Text("seconds")
-                            .foregroundStyle(.secondary)
-                    }
-                }
+                DefaultableTextField(
+                    title: "Reset Delay:",
+                    placeholder: ResetDelay.defaultValue,
+                    text: $model.keySequenceResetDelay,
+                    width: 90,
+                    unit: "seconds"
+                )
                 ValidationMessage(model.keySequenceResetDelayProblem?.message)
             } header: {
                 Text("Key Sequence Activation")
@@ -75,9 +74,18 @@ struct BindingsSettingsView: View {
         Toggle(title, isOn: enabled)
 
         LabeledContent("Sequence:") {
-            TextField(placeholder, text: sequence)
-                .frame(width: 130)
-                .disabled(!enabled.wrappedValue)
+            HStack(spacing: 8) {
+                TextField("", text: sequence, prompt: Text(placeholder))
+                    .labelsHidden()
+                    .textFieldStyle(.roundedBorder)
+                    .multilineTextAlignment(.leading)
+                    .frame(width: 130)
+                    .disabled(!enabled.wrappedValue)
+
+                // Keeps the field on the same line as the ones that carry a
+                // Restore Default button, instead of hard against the edge.
+                Spacer(minLength: 8)
+            }
         }
 
         ValidationMessage(problem)

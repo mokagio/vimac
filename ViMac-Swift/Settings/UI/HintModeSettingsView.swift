@@ -6,25 +6,28 @@ struct HintModeSettingsView: View {
     var body: some View {
         Form {
             Section {
-                LabeledContent("Characters:") {
-                    TextField(HintCharacters.defaultValue, text: $model.hintCharacters)
-                        .frame(width: 200)
-                }
+                DefaultableTextField(
+                    title: "Characters:",
+                    placeholder: HintCharacters.defaultValue,
+                    text: $model.hintCharacters
+                )
                 ValidationMessage(model.hintCharactersProblem?.message)
             } footer: {
-                Text("The characters hints are drawn from. At least \(HintCharacters.minimumCount), each used once.")
-                    .foregroundStyle(.secondary)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("The characters hints are drawn from. At least \(HintCharacters.minimumCount), each used once.")
+                    Text("An empty field uses the default, which is the greyed-out text.")
+                }
+                .foregroundStyle(.secondary)
             }
 
             Section {
-                LabeledContent("Text Size:") {
-                    HStack(spacing: 6) {
-                        TextField(HintTextSize.defaultValue, text: $model.hintTextSize)
-                            .frame(width: 80)
-                        Text("points")
-                            .foregroundStyle(.secondary)
-                    }
-                }
+                DefaultableTextField(
+                    title: "Text Size:",
+                    placeholder: HintTextSize.defaultValue,
+                    text: $model.hintTextSize,
+                    width: 90,
+                    unit: "points"
+                )
                 ValidationMessage(model.hintTextSizeProblem?.message)
             }
         }

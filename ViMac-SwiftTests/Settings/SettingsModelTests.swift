@@ -125,6 +125,38 @@ struct SettingsModelTests {
         #expect(store.value(for: VimacSettings.hintCharacters) == HintCharacters.defaultValue)
     }
 
+    // MARK: - Restoring defaults
+
+    @Test("Emptying a field forgets the stored value instead of storing an empty one")
+    func emptyingResets() {
+        let (model, storage) = makeModel(stored: [
+            "HintCharacters": "qwerty",
+            "HintTextSize": "20",
+            "ScrollCharacters": "a,b,c,d",
+            "keySequenceResetDelay": "0.5",
+        ])
+
+        model.hintCharacters = ""
+        model.hintTextSize = ""
+        model.scrollKeys = ""
+        model.keySequenceResetDelay = ""
+
+        #expect(storage.persistedObject(forKey: "HintCharacters") == nil)
+        #expect(storage.persistedObject(forKey: "HintTextSize") == nil)
+        #expect(storage.persistedObject(forKey: "ScrollCharacters") == nil)
+        #expect(storage.persistedObject(forKey: "keySequenceResetDelay") == nil)
+    }
+
+    @Test("An emptied field reads back as the shipped default")
+    func emptiedFieldReadsAsDefault() {
+        let (model, storage) = makeModel(stored: ["HintCharacters": "qwerty"])
+        let store = SettingsStore(storage: storage)
+
+        model.hintCharacters = ""
+
+        #expect(store.value(for: VimacSettings.hintCharacters) == HintCharacters.defaultValue)
+    }
+
     // MARK: - Problems
 
     @Test("An empty field is not a complaint — it means use the default")
