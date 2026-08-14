@@ -10,25 +10,27 @@ import Cocoa
 import RxSwift
 
 class BindingsRepository {
+    private let store = AppSettings.store
+
     func read() -> BindingsConfig {
-        BindingsConfig.init(
-            holdSpaceHintModeActivationEnabled: UserDefaultsProperties.holdSpaceHintModeActivationEnabled.read(),
-            hintModeKeySequenceEnabled: UserDefaultsProperties.keySequenceHintModeEnabled.read(),
-            hintModeKeySequence: UserDefaultsProperties.keySequenceHintMode.read(),
-            scrollModeKeySequenceEnabled: UserDefaultsProperties.keySequenceScrollModeEnabled.read(),
-            scrollModeKeySequence: UserDefaultsProperties.keySequenceScrollMode.read(),
-            resetDelay: Double(UserDefaultsProperties.keySequenceResetDelay.read()) ?? Double(UserDefaultsProperties.keySequenceResetDelay.defaultValue)!
+        BindingsConfig(
+            holdSpaceHintModeActivationEnabled: store.value(for: VimacSettings.holdSpaceForHintMode),
+            hintModeKeySequenceEnabled: store.value(for: VimacSettings.hintModeKeySequenceEnabled),
+            hintModeKeySequence: store.value(for: VimacSettings.hintModeKeySequence),
+            scrollModeKeySequenceEnabled: store.value(for: VimacSettings.scrollModeKeySequenceEnabled),
+            scrollModeKeySequence: store.value(for: VimacSettings.scrollModeKeySequence),
+            resetDelay: ResetDelay.seconds(from: store.value(for: VimacSettings.keySequenceResetDelay))
         )
     }
-    
+
     func readLive() -> Observable<BindingsConfig> {
         Observable.combineLatest(
-            UserDefaultsProperties.holdSpaceHintModeActivationEnabled.readLive(),
-            UserDefaultsProperties.keySequenceHintModeEnabled.readLive(),
-            UserDefaultsProperties.keySequenceHintMode.readLive(),
-            UserDefaultsProperties.keySequenceScrollModeEnabled.readLive(),
-            UserDefaultsProperties.keySequenceScrollMode.readLive(),
-            UserDefaultsProperties.keySequenceResetDelay.readLive()
+            VimacSettings.holdSpaceForHintMode.observe(),
+            VimacSettings.hintModeKeySequenceEnabled.observe(),
+            VimacSettings.hintModeKeySequence.observe(),
+            VimacSettings.scrollModeKeySequenceEnabled.observe(),
+            VimacSettings.scrollModeKeySequence.observe(),
+            VimacSettings.keySequenceResetDelay.observe()
         ).map({ _ in self.read() })
     }
 }

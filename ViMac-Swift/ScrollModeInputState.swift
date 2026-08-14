@@ -11,7 +11,7 @@ import Cocoa
 class ScrollModeInputState {
     static func instantiate() -> ScrollModeInputState {
         let scrollModeInputState = ScrollModeInputState()
-        let config = UserPreferences.ScrollMode.ScrollKeysProperty.readAsConfig()
+        let config = AppSettings.scrollKeyConfig
         
         for binding in config.bindings {
             try! _ = scrollModeInputState.registerBinding(binding: binding)

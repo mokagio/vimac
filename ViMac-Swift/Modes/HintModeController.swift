@@ -112,7 +112,7 @@ class HintModeUserInterface {
     let contentViewController: ContentViewController
     var hintsViewController: HintsViewController?
 
-    let textSize = UserPreferences.HintMode.TextSizeProperty.readAsFloat()
+    let textSize = Float(AppSettings.hintTextSize)
 
     init(window: Element?) {
         self.window = window
@@ -178,7 +178,7 @@ class HintModeController: ModeController {
     private let startTime = CFAbsoluteTimeGetCurrent()
     private let disposeBag = DisposeBag()
 
-    let hintCharacters = UserPreferences.HintMode.CustomCharactersProperty.read()
+    let hintCharacters = AppSettings.hintCharacters
     
     private var ui: HintModeUserInterface?
     private var input: String?

@@ -72,7 +72,7 @@ There are three ways to activate modes:
   - Is not a prefix of another registered key sequence
   - If you are a Vimium user, consider using `;f` and `;a` so it does not add delays or interfere with Vimium's bindings
 
-You may configure the bindings in the Bindings tab in Preferences.
+You may configure the bindings in the Bindings pane of Settings.
 
 If these activation mechanisms do not fit your use case, do look into creating custom bindings with Karabiner Elements. Please share with me your custom activation mechanisms! This is an area I spend a lot of time thinking about and improving.
 

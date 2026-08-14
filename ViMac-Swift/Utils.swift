@@ -10,9 +10,6 @@ import MASShortcut
 import RxSwift
 
 class Utils: NSObject {
-    static let forceKeyboardLayoutKey = "ForceKeyboardLayout"
-    static let shouldLaunchOnStartupKey = "ShouldLaunchOnStartupKey"
-    
     static func moveMouse(position: CGPoint) {
         let moveEvent = CGEvent(mouseEventSource: nil, mouseType: .mouseMoved, mouseCursorPosition: position, mouseButton: .left)
         moveEvent?.post(tap: .cghidEventTap)

@@ -26,8 +26,8 @@ class ChunkyScroller: Scroller {
                 fatalError("<direction> scroll directions should not used for SmoothScroller")
         }
         
-        let isHorizontalScrollReversed = UserPreferences.ScrollMode.ReverseHorizontalScrollProperty.read()
-        let isVerticalScrollReversed = UserPreferences.ScrollMode.ReverseVerticalScrollProperty.read()
+        let isHorizontalScrollReversed = AppSettings.isHorizontalScrollReversed
+        let isVerticalScrollReversed = AppSettings.isVerticalScrollReversed
         
         if isHorizontalScrollReversed {
             xAxis = -xAxis
@@ -43,7 +43,7 @@ class ChunkyScroller: Scroller {
     }
     
     static func instantiateForSmoothScroll(direction: ScrollDirection) -> ChunkyScroller {
-        let sensitivity = UserPreferences.ScrollMode.ScrollSensitivityProperty.read()
+        let sensitivity = AppSettings.scrollSensitivity
         
         var xAxis = Int32(0)
         var yAxis = Int32(0)
@@ -67,8 +67,8 @@ class ChunkyScroller: Scroller {
                 fatalError("half-<direction> scroll directions should not used for smooth scrolling")
         }
         
-        let isHorizontalScrollReversed = UserPreferences.ScrollMode.ReverseHorizontalScrollProperty.read()
-        let isVerticalScrollReversed = UserPreferences.ScrollMode.ReverseVerticalScrollProperty.read()
+        let isHorizontalScrollReversed = AppSettings.isHorizontalScrollReversed
+        let isVerticalScrollReversed = AppSettings.isVerticalScrollReversed
         
         var frequency: Double
         if ![.bottom, .top].contains(direction) {

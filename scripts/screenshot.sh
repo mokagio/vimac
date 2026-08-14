@@ -7,7 +7,7 @@ cd "$(dirname "$0")/.."
 DERIVED_DATA="${DERIVED_DATA:-build}"
 APP_PATH="$(pwd)/$DERIVED_DATA/Build/Products/Debug/Vimac.app"
 OUTPUT_DIR="${OUTPUT_DIR:-tmp/screenshots}"
-WINDOW_NAME="${WINDOW_NAME:-General}"  # Preferences pane titles: General/Bindings/...
+WINDOW_NAME="${WINDOW_NAME:-General}"  # The window is titled after the pane: General/Bindings/...
 
 if [[ ! -d "$APP_PATH" ]]; then
   echo "screenshot: $APP_PATH missing — building first." >&2
@@ -36,7 +36,7 @@ fi
 
 # Target the dev build by its unique bundle id, not by display name (which
 # collides with the installed Vimac). `applicationShouldHandleReopen` triggers
-# `openPreferences()` in AppDelegate.
+# `openSettings()` in AppDelegate.
 osascript -e "tell application id \"$bundle_id\" to activate" >/dev/null 2>&1 || true
 osascript <<APPLESCRIPT >/dev/null 2>&1 || true
 tell application "System Events"
@@ -46,11 +46,11 @@ tell application "System Events"
 end tell
 APPLESCRIPT
 
-# Let the Preferences window finish opening before we look for it.
+# Let the Settings window finish opening before we look for it.
 sleep 1.5
 
 timestamp="$(date +%Y%m%d-%H%M%S)"
-output="$OUTPUT_DIR/preferences-$timestamp.png"
+output="$OUTPUT_DIR/settings-$timestamp.png"
 
 window_id="$(swift scripts/_find_window_id.swift "$pid" "$WINDOW_NAME" 2>/dev/null || true)"
 

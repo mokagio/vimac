@@ -41,7 +41,7 @@ class ModeCoordinator: ModeControllerDelegate {
             self?.setHintMode()
         }))
         
-        UserDefaultsProperties.holdSpaceHintModeActivationEnabled.readLive()
+        VimacSettings.holdSpaceForHintMode.observe()
             .bind(onNext: { [weak self] enabled in
                 guard let self = self else { return }
 
@@ -183,10 +183,10 @@ extension UserDefaults
     @objc dynamic var ForceKeyboardLayout: String?
     {
         get {
-            return string(forKey: Utils.forceKeyboardLayoutKey)
+            return string(forKey: VimacSettings.forcedKeyboardLayout.key)
         }
         set {
-            set(newValue, forKey: Utils.forceKeyboardLayoutKey)
+            set(newValue, forKey: VimacSettings.forcedKeyboardLayout.key)
         }
     }
 

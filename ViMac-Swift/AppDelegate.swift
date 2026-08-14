@@ -10,25 +10,24 @@ import Cocoa
 import AXSwift
 import RxSwift
 import MASShortcut
-import LaunchAtLogin
-import Preferences
 
 @NSApplicationMain
+@MainActor
 class AppDelegate: NSObject, NSApplicationDelegate {
     var welcomeWindowController: NSWindowController?
     
     private lazy var focusedWindowDisturbedObservable: Observable<FrontmostApplicationService.ApplicationNotification> = createFocusedWindowDisturbedObservable()
     private lazy var windowObservable: Observable<Element?> = createFocusedWindowObservable()
 
-    let hintModeShortcutObservable: Observable<Void> = KeyboardShortcuts.shared.hintModeShortcutActivation()
-    let scrollModeShortcutObservable: Observable<Void> = KeyboardShortcuts.shared.scrollModeShortcutActivation()
+    let hintModeShortcutObservable: Observable<Void> = ShortcutMonitor.shared.activation(of: .hintMode)
+    let scrollModeShortcutObservable: Observable<Void> = ShortcutMonitor.shared.activation(of: .scrollMode)
     
     var compositeDisposable: CompositeDisposable
     var scrollModeDisposable: CompositeDisposable? = CompositeDisposable()
     
     var modeCoordinator: ModeCoordinator!
     let overlayWindowController: OverlayWindowController
-    var preferencesWindowController: PreferencesWindowController!
+    var settingsWindowController: SettingsWindowController!
     var statusItemManager: StatusItemManager!
     
     let frontmostAppService = FrontmostApplicationService.init()
@@ -37,12 +36,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         InputSourceManager.initialize()
         overlayWindowController = OverlayWindowController()
         
-        LaunchAtLogin.isEnabled = UserDefaults.standard.bool(forKey: Utils.shouldLaunchOnStartupKey)
-        KeyboardShortcuts.shared.setUp()
-        UserDefaults.standard.register(defaults: [
-            Utils.shouldLaunchOnStartupKey: false,
-        ])
-        
+        ShortcutMonitor.shared.setUp()
+
         self.compositeDisposable = CompositeDisposable()
         
         super.init()
@@ -54,7 +49,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             return
         }
 
-        setupPreferences()
+        setupSettings()
         setupStatusItem()
 
         if AXIsProcessTrusted() {
@@ -78,7 +73,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
         
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
-        openPreferences()
+        openSettings(sender)
         return true
     }
         
@@ -90,30 +85,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return instances > 1
     }
         
-    func setupPreferences() {
-        if self.preferencesWindowController == nil {
-            self.preferencesWindowController = PreferencesWindowController(
-                preferencePanes: [
-                    GeneralPreferenceViewController(),
-                    BindingsPreferenceViewController(),
-                    HintModePreferenceViewController(),
-                    ScrollModePreferenceViewController(),
-                    ExperimentalPreferenceViewController(),
-                    AboutPreferencesViewController()
-                ],
-                style: .toolbarItems,
-                animated: true
-            )
-            self.preferencesWindowController.window?.delegate = self
+    func setupSettings() {
+        if self.settingsWindowController == nil {
+            self.settingsWindowController = SettingsWindowController()
+            self.settingsWindowController.window?.delegate = self
         }
     }
         
-    func openPreferences() {
-        self.preferencesWindowController.show()
+    /// Reached from the main menu's Settings… item, which the storyboard sends
+    /// to the first responder.
+    @objc func openSettings(_ sender: Any?) {
+        setupSettings()
+        settingsWindowController.show()
     }
         
     func setupStatusItem() {
-        self.statusItemManager = StatusItemManager.init(preferencesWindowController: self.preferencesWindowController)
+        self.statusItemManager = StatusItemManager.init(settingsWindowController: self.settingsWindowController)
     }
     
     func createApplicationObservable() -> Observable<NSRunningApplication?> {
@@ -166,7 +153,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let axWorker = ConcurrentDispatchQueueScheduler.init(qos: .default)
         let frontmostAppChange = createApplicationObservable().withPrevious().share()
 
-        let isAXManualAccessibilityEnabled = UserDefaultsProperties.AXManualAccessibilityEnabled.readLive()
+        let isAXManualAccessibilityEnabled = VimacSettings.electronSupport.observe()
         let AXManualAccessibilityDisabled: Observable<Void> = isAXManualAccessibilityEnabled
             .filter({ !$0 })
             .map({ _ in Void() })
@@ -189,7 +176,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 })
         )
         
-        let isAXEnhancedUserInterfaceEnabled = UserDefaultsProperties.AXEnhancedUserInterfaceEnabled.readLive()
+        let isAXEnhancedUserInterfaceEnabled = VimacSettings.emulateVoiceOver.observe()
         let AXEnhancedUserInterfaceDisabled: Observable<Void> = isAXEnhancedUserInterfaceEnabled
             .filter({ !$0 })
             .map({ _ in Void() })

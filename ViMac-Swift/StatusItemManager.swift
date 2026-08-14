@@ -7,18 +7,18 @@
 //
 
 import Cocoa
-import Preferences
 
+@MainActor
 class StatusItemManager: NSObject {
     let menu: NSMenu
     let statusItem: NSStatusItem
-    let preferencesWindowController: PreferencesWindowController
+    let settingsWindowController: SettingsWindowController
     
-    init(preferencesWindowController: PreferencesWindowController) {
+    init(settingsWindowController: SettingsWindowController) {
         self.menu = NSMenu()
         self.statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
         self.statusItem.button!.image = NSImage(named: "StatusBarButtonImage")
-        self.preferencesWindowController = preferencesWindowController
+        self.settingsWindowController = settingsWindowController
         
         super.init()
         
@@ -35,18 +35,18 @@ extension StatusItemManager : NSMenuDelegate {
             menu.addItem(NSMenuItem.separator())
             
             menu.addItem(withTitle: "About", action: #selector(aboutClick), keyEquivalent: "").target = self
-            menu.addItem(withTitle: "Preferences", action: #selector(preferencesClick), keyEquivalent: "").target = self
+            menu.addItem(withTitle: "Settings…", action: #selector(settingsClick), keyEquivalent: "").target = self
             menu.addItem(NSMenuItem.separator())
             menu.addItem(withTitle: "Quit", action: #selector(quitClick), keyEquivalent: "").target = self
         }
     }
     
-    @objc func preferencesClick() {
-        preferencesWindowController.show()
+    @objc func settingsClick() {
+        settingsWindowController.show()
     }
     
     @objc func aboutClick() {
-        preferencesWindowController.show(preferencePane: .about)
+        settingsWindowController.show(pane: .about)
     }
 
     @objc func openGithubIssues() {

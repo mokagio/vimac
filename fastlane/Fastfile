@@ -11,7 +11,7 @@ platform :mac do
     sh("../scripts/test.sh")
   end
 
-  desc "Launch the built app and capture its Preferences window"
+  desc "Launch the built app and capture its Settings window"
   lane :screenshot do |output: 'tmp/screenshots', window_name: 'General'|
     sh("OUTPUT_DIR=#{output.shellescape} WINDOW_NAME=#{window_name.shellescape} ../scripts/screenshot.sh")
   end
