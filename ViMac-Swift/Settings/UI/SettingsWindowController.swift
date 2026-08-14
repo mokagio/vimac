@@ -15,20 +15,21 @@ final class SettingsWindowController: NSWindowController {
 
         let window = SettingsWindow(
             contentRect: NSRect(x: 0, y: 0, width: 760, height: 520),
-            // `fullSizeContentView` alongside a unified toolbar is what lets the
-            // sidebar run the height of the window and sit flush against its
-            // edge, the way System Settings does. Without it the sidebar draws
-            // as a card inset from the frame.
+            // Content runs the full height of the frame, so the sidebar's
+            // background carries on up behind the window buttons the way System
+            // Settings does, rather than stopping at a titlebar drawn above it.
             styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
             backing: .buffered,
             defer: false
         )
         window.contentViewController = hostingController
 
-        // `toolbarStyle` only takes effect when a toolbar exists. There are no
-        // toolbar items to show — the title is the whole point.
-        window.toolbar = NSToolbar()
-        window.toolbarStyle = .unified
+        // Without this the titlebar paints its own bar over the top of the
+        // content, which is the strip the sidebar was stopping short of.
+        window.titlebarAppearsTransparent = true
+
+        // No toolbar: an empty one only earns the window a sidebar-collapse
+        // button, and a six-item sidebar has no reason to collapse.
 
         // Left nil, AppKit hands the first pass of focus to the first control
         // in the key view loop — a text field, which selects its contents as it

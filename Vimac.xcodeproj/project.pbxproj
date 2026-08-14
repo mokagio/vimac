@@ -24,6 +24,7 @@
 		5BE40E779CF243A49A40F729 /* SettingsFocusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD8B4E8A953765FA2D19F /* SettingsFocusTests.swift */; };
 		5E487D0C72496D3119E9C7DC /* ShortcutSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B84E3B4EA1A108D2454D01 /* ShortcutSetting.swift */; };
 		6BC1D36326C00468EAFE7F7D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208DCD4B415A8AE7EAAB76A0 /* SettingsView.swift */; };
+		78753200027A41C582F1F36F /* SettingsPaneIconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAB5BB534C7170257BB275A /* SettingsPaneIconTests.swift */; };
 		7A526DB9DAD138B45937BC91 /* HintModeSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09317548682BE6007CDF5B89 /* HintModeSettingsView.swift */; };
 		7C59A2388F3C8F3AB3743AF4 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DFBB6A9DC103B78741083D /* Setting.swift */; };
 		8074E5390706470FBFB7AF78 /* SettingsPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26DA38642B608E0C9EFC0CD /* SettingsPane.swift */; };
@@ -166,6 +167,7 @@
 		4E4AD8B4E8A953765FA2D19F /* SettingsFocusTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsFocusTests.swift; sourceTree = "<group>"; };
 		7049A634926FE068A48C3717 /* VimacSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VimacSettings.swift; sourceTree = "<group>"; };
 		82E7DC31C5B6352628FD4790 /* ScrollKeysTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScrollKeysTests.swift; sourceTree = "<group>"; };
+		8AAB5BB534C7170257BB275A /* SettingsPaneIconTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsPaneIconTests.swift; sourceTree = "<group>"; };
 		8EF96C6A79A5B34FF4CBAD09 /* SettingsViewRenderingTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsViewRenderingTests.swift; sourceTree = "<group>"; };
 		906FC4C40ADAB0EA91648CBE /* SettingsModelTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsModelTests.swift; sourceTree = "<group>"; };
 		945FB993C1D1A0DA376B22E0 /* AppSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 				8EF96C6A79A5B34FF4CBAD09 /* SettingsViewRenderingTests.swift */,
 				EDC55F114611AC3BFD481779 /* SettingsViewAccessibilityTests.swift */,
 				4E4AD8B4E8A953765FA2D19F /* SettingsFocusTests.swift */,
+				8AAB5BB534C7170257BB275A /* SettingsPaneIconTests.swift */,
 			);
 			name = Settings;
 			path = Settings;
@@ -849,6 +852,7 @@
 				06D69009916A8332EA317820 /* SettingsViewRenderingTests.swift in Sources */,
 				3DBEE12DC5E1025B66656AC1 /* SettingsViewAccessibilityTests.swift in Sources */,
 				5BE40E779CF243A49A40F729 /* SettingsFocusTests.swift in Sources */,
+				78753200027A41C582F1F36F /* SettingsPaneIconTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
