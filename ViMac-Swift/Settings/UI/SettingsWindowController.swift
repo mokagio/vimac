@@ -20,6 +20,13 @@ final class SettingsWindowController: NSWindowController {
             defer: false
         )
         window.contentViewController = hostingController
+
+        // Left nil, AppKit hands the first pass of focus to the first control
+        // in the key view loop — a text field, which selects its contents as it
+        // takes focus. Naming a view that refuses focus opens the window with
+        // the cursor nowhere, which is where it belongs until asked for.
+        window.initialFirstResponder = hostingController.view
+
         window.setContentSize(NSSize(width: 760, height: 520))
         window.contentMinSize = NSSize(width: 680, height: 420)
         window.setFrameAutosaveName("SettingsWindow")

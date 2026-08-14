@@ -25,6 +25,26 @@ struct SettingsFocusTests {
         #expect(!(window.firstResponder is NSText))
     }
 
+    @Test("The window opens with the cursor out of every field")
+    func opensWithNothingFocused() throws {
+        let window = try #require(SettingsWindowController().window)
+        defer { window.orderOut(nil) }
+
+        window.orderBack(nil)
+        RunLoop.current.run(until: Date().addingTimeInterval(0.3))
+
+        let initial = try #require(
+            window.initialFirstResponder,
+            "left nil, AppKit focuses the first control in the key view loop"
+        )
+        #expect(initial.acceptsFirstResponder == false)
+
+        // What AppKit does the first time the window is placed on screen.
+        window.makeFirstResponder(initial)
+
+        #expect(!(window.firstResponder is NSText))
+    }
+
     @Test("A click leaves focus alone when no field holds it")
     func unclaimedClickLeavesOtherFocusAlone() throws {
         let window = try hostedPane()
