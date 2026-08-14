@@ -7,7 +7,9 @@
 DEVELOPMENT_TEAM = 63EWLY2W55
 CODE_SIGN_STYLE = Automatic
 
-MACOSX_DEPLOYMENT_TARGET = 13.0
+// 14.0 is what the settings screen needs: `@Observable` and the SwiftUI
+// `Form`/`NavigationSplitView` behaviour it is built on.
+MACOSX_DEPLOYMENT_TARGET = 14.0
 
 // The one place the bundle identifier is spelled out. Builds that need to run
 // alongside an installed copy pass a suffix instead of restating the whole id:
