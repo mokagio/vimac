@@ -51,6 +51,12 @@ Dependencies come from Swift Package Manager, so Xcode resolves them on first
 open — `make bootstrap` is only needed for the Ruby gems behind the fastlane
 lanes.
 
+`Packages/` holds Vimac's own local Swift packages, for logic that stands apart
+from the app: `HintEngine` generates hint labels and matches keystrokes against
+them.
+Each package carries its own tests, and `make test` runs them alongside the
+app's.
+
 Signing settings live in `Config/Project.xcconfig`.
 To sign with your own Apple Developer team, set `DEVELOPMENT_TEAM` in a
 `Config/Project.local.xcconfig` — it is gitignored and overrides the default.
@@ -65,7 +71,7 @@ Xcode UI:
 
 ```
 make build       # Debug build under build/, signed with DEVELOPMENT_TEAM
-make test        # VimacTests unit-test bundle (UI tests skipped — they need Accessibility)
+make test        # Packages/ tests, then the VimacTests unit-test bundle (UI tests skipped — they need Accessibility)
 make run         # launch the Debug build (open -n)
 make install     # quit any running copy, build Release, install to /Applications, launch
 make screenshot  # launch, open Preferences, capture PNG to tmp/screenshots/

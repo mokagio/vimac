@@ -1,15 +1,13 @@
 //
 //  Trie.swift
-//  Vimac
+//  HintEngine
 //
 //  Created by Dexter Leng on 8/11/20.
 //  Copyright © 2020 Dexter Leng. All rights reserved.
 //
 
-import Cocoa
-
-class TrieNode {
-    private var children: Dictionary<Character, TrieNode>
+final class TrieNode {
+    private var children: [Character: TrieNode]
     private var terminates: Bool
     let character: Character
     let parent: TrieNode?
@@ -26,7 +24,7 @@ class TrieNode {
     }
 
     func addWord(_ word: [Character]) {
-        if (word.count == 0) {
+        if word.count == 0 {
             return
         }
 
@@ -59,18 +57,18 @@ class TrieNode {
     }
 }
 
-class Trie {
+final class Trie {
     let root: TrieNode
 
     init() {
         // garbage character
         root = TrieNode(character: "n", terminates: false, parent: nil)
     }
-    
+
     func addWord(_ word: [Character]) {
         root.addWord(word)
     }
-    
+
     func isPrefix(_ word: [Character]) -> Bool {
         var lastNode: TrieNode? = root
         for c in word {
@@ -81,7 +79,7 @@ class Trie {
         }
         return true
     }
-    
+
     func contains(_ word: [Character]) -> Bool {
         var lastNode: TrieNode? = root
         for c in word {
@@ -92,7 +90,7 @@ class Trie {
         }
         return lastNode!.isTerminating()
     }
-    
+
     func doesPrefixWordExist(_ word: [Character]) -> Bool {
         var lastNode: TrieNode? = root
         for c in word {

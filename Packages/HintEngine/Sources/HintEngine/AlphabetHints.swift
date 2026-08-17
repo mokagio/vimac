@@ -1,21 +1,24 @@
 //
 //  AlphabetHints.swift
-//  ViMac-Swift
+//  HintEngine
 //
 //  Created by Dexter Leng on 12/9/19.
 //  Copyright © 2019 Dexter Leng. All rights reserved.
 //
 
-// Refer to:
-// https://github.com/philc/vimium/blob/881a6fdc3644f55fc02ad56454203f654cc76618/content_scripts/link_hints.coffee#L434
-class AlphabetHints {
-    let hintKeystrokeQueue: [String] = []
-    
-    func hintStrings(linkCount: Int, hintCharacters: String) -> [String] {
+/// Labels for the actionable elements of a window, drawn from a user-chosen
+/// alphabet.
+///
+/// The algorithm is Vimium's:
+/// https://github.com/philc/vimium/blob/881a6fdc3644f55fc02ad56454203f654cc76618/content_scripts/link_hints.coffee#L434
+public enum AlphabetHints {
+    /// Uppercased labels, one per element, none of them a prefix of another —
+    /// so typing a label is never ambiguous.
+    public static func hintStrings(linkCount: Int, hintCharacters: String) -> [String] {
         if linkCount == 0 {
             return []
         }
-        
+
         var hints = [""]
         var offset = 0
         while hints.count - offset < linkCount || hints.count == 1 {

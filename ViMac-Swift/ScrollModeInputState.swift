@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import HintEngine
 
 class ScrollModeInputState {
     static func instantiate() -> ScrollModeInputState {

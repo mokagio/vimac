@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import HintEngine
 import RxSwift
 
 class HintModeQueryService {
@@ -24,7 +25,7 @@ class HintModeQueryService {
         let elements = elementObservable().share()
         let count = elements.toArray().map({ $0.count })
         let hintStrings: Observable<String> = count
-            .map { AlphabetHints().hintStrings(linkCount: $0, hintCharacters: self.hintCharacters) }
+            .map { AlphabetHints.hintStrings(linkCount: $0, hintCharacters: self.hintCharacters) }
             .asObservable()
             .flatMap({ Observable.from($0) })
         

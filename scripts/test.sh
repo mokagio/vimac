@@ -14,6 +14,12 @@ export BUILD_ENV=CI
 formatter=(cat)
 command -v xcbeautify >/dev/null && formatter=(xcbeautify)
 
+# The local packages own their tests, and `-only-testing:VimacTests` below
+# cannot reach them.
+for package in Packages/*/; do
+  swift test --package-path "$package"
+done
+
 # VimacTests is the unit-test bundle. The UI-test target is skipped because it
 # needs Accessibility permission granted to the test runner — run it manually
 # with `xcodebuild test -only-testing:VimacUITests` when that prerequisite is met.
