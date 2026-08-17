@@ -70,7 +70,6 @@
 		E25FFA4825E1656F00721F2F /* GeometryUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25FFA4725E1656F00721F2F /* GeometryUtils.swift */; };
 		E26172242322968500E396CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26172232322968500E396CA /* AppDelegate.swift */; };
 		E26172282322968600E396CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E26172272322968600E396CA /* Assets.xcassets */; };
-		E26172372322968700E396CA /* ViMac_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26172362322968700E396CA /* ViMac_SwiftTests.swift */; };
 		E26172422322968700E396CA /* ViMac_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26172412322968700E396CA /* ViMac_SwiftUITests.swift */; };
 		E261725A2324EC7100E396CA /* OverlayWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26172592324EC7100E396CA /* OverlayWindow.swift */; };
 		E2677780255FE0420034B131 /* QueryScrollAreasService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E267777F255FE0420034B131 /* QueryScrollAreasService.swift */; };
@@ -205,7 +204,6 @@
 		E261722C2322968700E396CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E261722D2322968700E396CA /* ViMac_Swift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ViMac_Swift.entitlements; sourceTree = "<group>"; };
 		E26172322322968700E396CA /* VimacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VimacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E26172362322968700E396CA /* ViMac_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViMac_SwiftTests.swift; sourceTree = "<group>"; };
 		E26172382322968700E396CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E261723D2322968700E396CA /* VimacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VimacUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26172412322968700E396CA /* ViMac_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViMac_SwiftUITests.swift; sourceTree = "<group>"; };
@@ -518,7 +516,6 @@
 		E26172352322968700E396CA /* ViMac-SwiftTests */ = {
 			isa = PBXGroup;
 			children = (
-				E26172362322968700E396CA /* ViMac_SwiftTests.swift */,
 				E26172382322968700E396CA /* Info.plist */,
 				E2B1A0FE2B5E000200AB1235 /* HintModeInputIntentTests.swift */,
 				E2B1A0FE2B5E000300AB1235 /* GeometryUtilsTests.swift */,
@@ -817,7 +814,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E26172372322968700E396CA /* ViMac_SwiftTests.swift in Sources */,
 				E2B1A0FF2B5E000200AB1235 /* HintModeInputIntentTests.swift in Sources */,
 				E2B1A0FF2B5E000300AB1235 /* GeometryUtilsTests.swift in Sources */,
 				E2B1A0FF2B5E000400AB1235 /* ScrollModeInputStateTests.swift in Sources */,
