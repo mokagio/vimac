@@ -3,82 +3,84 @@
 //  VimacTests
 //
 
-import XCTest
+import Testing
 @testable import Vimac
 
-class ScrollModeInputStateTests: XCTestCase {
-    private var subject: ScrollModeInputState!
+@Suite("Scroll mode input state")
+struct ScrollModeInputStateTests {
+    private let subject = ScrollModeInputState()
 
-    override func setUp() {
-        super.setUp()
-        subject = ScrollModeInputState()
-    }
-
-    private func register(_ keys: String, _ direction: ScrollDirection) {
-        _ = try! subject.registerBinding(binding: ScrollKeyConfig.Binding(
+    private func register(_ keys: String, _ direction: ScrollDirection) throws {
+        _ = try subject.registerBinding(binding: ScrollKeyConfig.Binding(
             keys: Array(keys),
             direction: direction
         ))
     }
 
-    func test_single_key_match_resolves_direction() {
-        register("j", .down)
+    @Test("A single key resolves to the direction bound to it")
+    func singleKeyMatch() throws {
+        try register("j", .down)
 
-        guard case let .match(direction) = try! subject.advance(key: "j") else {
-            return XCTFail("expected .match")
+        guard case let .match(direction) = try subject.advance(key: "j") else {
+            Issue.record("expected .match")
+            return
         }
-        XCTAssertEqual(direction, .down)
+        #expect(direction == .down)
     }
 
-    func test_unknown_key_is_a_deadend() {
-        register("j", .down)
-        register("k", .up)
+    @Test("An unbound key is a deadend")
+    func unknownKey() throws {
+        try register("j", .down)
+        try register("k", .up)
 
-        if case .deadend = try! subject.advance(key: "x") {
-            // ok
-        } else {
-            XCTFail("expected .deadend for unbound key")
+        guard case .deadend = try subject.advance(key: "x") else {
+            Issue.record("expected .deadend for unbound key")
+            return
         }
     }
 
-    func test_partial_prefix_is_advancable_then_resolves() {
-        register("gg", .top)
-        register("gj", .down)
+    @Test("The first key of a multi-key binding advances, the last resolves")
+    func partialPrefix() throws {
+        try register("gg", .top)
+        try register("gj", .down)
 
-        if case .advancable = try! subject.advance(key: "g") {
-            // ok
-        } else {
-            XCTFail("expected .advancable after first key of multi-char binding")
+        guard case .advancable = try subject.advance(key: "g") else {
+            Issue.record("expected .advancable after first key of multi-char binding")
+            return
         }
-
-        guard case let .match(direction) = try! subject.advance(key: "g") else {
-            return XCTFail("expected .match after completing binding")
+        guard case let .match(direction) = try subject.advance(key: "g") else {
+            Issue.record("expected .match after completing binding")
+            return
         }
-        XCTAssertEqual(direction, .top)
+        #expect(direction == .top)
     }
 
-    func test_distinct_multi_key_bindings_resolve_independently() {
-        register("gg", .top)
-        register("GG", .bottom)
+    @Test("Bindings differing only in case resolve apart")
+    func caseDistinguishesBindings() throws {
+        try register("gg", .top)
+        try register("GG", .bottom)
 
-        _ = try! subject.advance(key: "G")
-        guard case let .match(direction) = try! subject.advance(key: "G") else {
-            return XCTFail("expected .match")
+        _ = try subject.advance(key: "G")
+
+        guard case let .match(direction) = try subject.advance(key: "G") else {
+            Issue.record("expected .match")
+            return
         }
-        XCTAssertEqual(direction, .bottom)
+        #expect(direction == .bottom)
     }
 
-    func test_duplicate_binding_registration_is_rejected() {
-        let first = try! subject.registerBinding(binding: ScrollKeyConfig.Binding(
+    @Test("Keys already bound cannot be bound again")
+    func duplicateRegistration() throws {
+        let first = try subject.registerBinding(binding: ScrollKeyConfig.Binding(
             keys: Array("j"),
             direction: .down
         ))
-        XCTAssertTrue(first)
-
-        let second = try! subject.registerBinding(binding: ScrollKeyConfig.Binding(
+        let second = try subject.registerBinding(binding: ScrollKeyConfig.Binding(
             keys: Array("j"),
             direction: .up
         ))
-        XCTAssertFalse(second)
+
+        #expect(first)
+        #expect(!second)
     }
 }
