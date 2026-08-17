@@ -3,15 +3,16 @@
 //  VimacTests
 //
 
-import XCTest
+import Cocoa
+import Testing
 @testable import Vimac
 
 // `doesEventMatchBinding` decides whether a key event triggers a scroll binding.
 // The contract is a plain character-string equality against the binding's keys;
 // these tests pin that down (including the multi-key and case-sensitive cases)
 // so the matching can be reimplemented without silently changing behaviour.
-class ScrollModeInputListenerTests: XCTestCase {
-
+@Suite("Scroll mode input listener")
+struct ScrollModeInputListenerTests {
     private func keyDown(_ characters: String) -> NSEvent {
         NSEvent.keyEvent(
             with: .keyDown,
@@ -31,36 +32,29 @@ class ScrollModeInputListenerTests: XCTestCase {
         ScrollKeyConfig.Binding(keys: Array(keys), direction: direction)
     }
 
-    func test_single_character_match() {
-        XCTAssertTrue(
-            ScrollModeInputListener.doesEventMatchBinding(event: keyDown("j"), binding: binding("j"))
-        )
+    @Test("A key matches the binding bound to it")
+    func singleCharacterMatch() {
+        #expect(ScrollModeInputListener.doesEventMatchBinding(event: keyDown("j"), binding: binding("j")))
     }
 
-    func test_single_character_mismatch() {
-        XCTAssertFalse(
-            ScrollModeInputListener.doesEventMatchBinding(event: keyDown("k"), binding: binding("j"))
-        )
+    @Test("A key does not match a binding bound to another")
+    func singleCharacterMismatch() {
+        #expect(!ScrollModeInputListener.doesEventMatchBinding(event: keyDown("k"), binding: binding("j")))
     }
 
-    func test_multi_character_sequence_match() {
-        XCTAssertTrue(
-            ScrollModeInputListener.doesEventMatchBinding(event: keyDown("gg"), binding: binding("gg"))
-        )
+    @Test("A multi-character sequence matches the binding bound to it")
+    func multiCharacterMatch() {
+        #expect(ScrollModeInputListener.doesEventMatchBinding(event: keyDown("gg"), binding: binding("gg")))
     }
 
-    func test_partial_sequence_does_not_match() {
-        XCTAssertFalse(
-            ScrollModeInputListener.doesEventMatchBinding(event: keyDown("g"), binding: binding("gg"))
-        )
+    @Test("Part of a sequence does not match the whole binding")
+    func partialSequence() {
+        #expect(!ScrollModeInputListener.doesEventMatchBinding(event: keyDown("g"), binding: binding("gg")))
     }
 
-    func test_matching_is_case_sensitive() {
-        XCTAssertFalse(
-            ScrollModeInputListener.doesEventMatchBinding(event: keyDown("g"), binding: binding("G"))
-        )
-        XCTAssertTrue(
-            ScrollModeInputListener.doesEventMatchBinding(event: keyDown("G"), binding: binding("G"))
-        )
+    @Test("Matching is case sensitive")
+    func caseSensitive() {
+        #expect(!ScrollModeInputListener.doesEventMatchBinding(event: keyDown("g"), binding: binding("G")))
+        #expect(ScrollModeInputListener.doesEventMatchBinding(event: keyDown("G"), binding: binding("G")))
     }
 }
